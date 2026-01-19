@@ -1,0 +1,1020 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lakeside Spine & Injury Center | $47 New Patient Special</title>
+        <meta name="description" content="Secure your $47 new patient special with Lakeside Spine & Injury Center. Same-day relief, expert chiropractic care, and a complete functional movement assessment with Dr. Andrew Allen.">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <style>
+            :root {
+                --primary-500: #2563eb;
+                --primary-600: #1d4ed8;
+                --primary-700: #1e40af;
+                --primary-800: #1e3a8a;
+                --accent-amber: #fbbf24;
+                --accent-red: #f87171;
+                --gray-50: #f8fafc;
+                --gray-100: #eef2f7;
+                --gray-200: #e2e8f0;
+                --gray-600: #475569;
+                --gray-700: #334155;
+                --gray-800: #1e293b;
+                --gray-900: #0f172a;
+                --success-500: #10b981;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                line-height: 1.6;
+                background: var(--gray-50);
+                color: var(--gray-800);
+            }
+
+            .urgency-bar {
+                background: linear-gradient(135deg, var(--accent-red), #dc2626);
+                color: #fff;
+                text-align: center;
+                padding: 12px 16px;
+                font-weight: 600;
+                font-size: 0.95rem;
+                letter-spacing: 0.01em;
+            }
+
+            header {
+                position: sticky;
+                top: 0;
+                z-index: 50;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+            }
+
+            nav {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px 24px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .logo {
+                display: inline-block;
+                line-height: 1;
+            }
+
+            .logo img {
+                height: 48px;
+                width: auto;
+                display: block;
+                max-width: 100%;
+            }
+
+            .nav-cta {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+
+            .nav-cta a {
+                color: var(--primary-700);
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+            .phone-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 10px 18px;
+                border-radius: 999px;
+                border: 1px solid rgba(37, 99, 235, 0.2);
+                background: rgba(37, 99, 235, 0.08);
+                color: var(--primary-700);
+                transition: background 0.2s ease;
+            }
+
+            .phone-link:hover {
+                background: rgba(37, 99, 235, 0.12);
+            }
+
+            .phone-link svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .btn-primary {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 14px 28px;
+                background: linear-gradient(135deg, var(--primary-600), var(--primary-800));
+                color: #fff;
+                border-radius: 10px;
+                font-weight: 600;
+                font-size: 1rem;
+                text-decoration: none;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+                box-shadow: 0 14px 30px rgba(37, 99, 235, 0.25);
+            }
+
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 18px 36px rgba(37, 99, 235, 0.3);
+            }
+
+            .btn-secondary {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 12px 22px;
+                border-radius: 10px;
+                border: 2px solid rgba(37, 99, 235, 0.2);
+                color: var(--primary-700);
+                font-weight: 600;
+                text-decoration: none;
+            }
+
+            .hero {
+                position: relative;
+                overflow: hidden;
+                background: radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.18), transparent 55%),
+                            radial-gradient(circle at 80% 10%, rgba(59, 130, 246, 0.18), transparent 60%),
+                            linear-gradient(180deg, #f8fbff, #eef3fb 75%);
+                padding: 120px 24px 80px;
+            }
+
+            .hero::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: url("https://images.unsplash.com/photo-1516651505508-3e1e5d70c3b9?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+                opacity: 0.28;
+                mix-blend-mode: multiply;
+                z-index: 0;
+            }
+
+            .hero::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(37, 99, 235, 0.15));
+                opacity: 0.15;
+                z-index: 0;
+            }
+
+            .hero-inner {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 48px;
+                align-items: center;
+                position: relative;
+                z-index: 1;
+            }
+
+            .hero-copy h1 {
+                font-size: clamp(2.4rem, 3.2vw + 1rem, 3.5rem);
+                line-height: 1.1;
+                letter-spacing: -0.02em;
+                margin-bottom: 20px;
+            }
+
+            .hero-copy h1 span {
+                color: var(--primary-600);
+            }
+
+            .hero-subtitle {
+                font-size: 1.15rem;
+                color: var(--gray-700);
+                margin-bottom: 28px;
+            }
+
+            .hero-offer {
+                background: #fff;
+                border-radius: 16px;
+                padding: 22px 24px;
+                box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12);
+                border: 1px solid rgba(37, 99, 235, 0.15);
+                margin-bottom: 28px;
+            }
+
+            .hero-offer h2 {
+                font-size: 1.4rem;
+                margin-bottom: 8px;
+                color: var(--primary-700);
+            }
+
+            .offer-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: rgba(16, 185, 129, 0.12);
+                color: var(--success-500);
+                font-weight: 600;
+                font-size: 0.9rem;
+                border-radius: 999px;
+                padding: 8px 16px;
+                margin-bottom: 14px;
+            }
+
+            .hero-offer ul {
+                list-style: none;
+                display: grid;
+                gap: 10px;
+                margin-top: 12px;
+            }
+
+            .hero-offer li {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                color: var(--gray-700);
+            }
+
+            .hero-offer li span {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 22px;
+                height: 22px;
+                border-radius: 6px;
+                background: rgba(37, 99, 235, 0.12);
+                color: var(--primary-700);
+                font-size: 0.8rem;
+                font-weight: 600;
+                flex-shrink: 0;
+            }
+
+            .hero-note {
+                margin-top: 16px;
+                font-size: 0.95rem;
+                color: var(--gray-600);
+            }
+
+            .hero-note strong {
+                color: var(--primary-700);
+            }
+
+            .hero-social {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+                margin-top: 32px;
+            }
+
+            .rating-card {
+                background: rgba(255, 255, 255, 0.85);
+                border: 1px solid rgba(37, 99, 235, 0.12);
+                border-radius: 12px;
+                padding: 16px 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                min-width: 220px;
+            }
+
+            .rating-stars {
+                color: #f59e0b;
+                letter-spacing: 0.15em;
+                font-size: 1rem;
+            }
+
+            .trust-badges {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                color: var(--gray-600);
+                font-size: 0.92rem;
+            }
+
+            .trust-badges span {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 38px;
+                height: 38px;
+                border-radius: 12px;
+                background: rgba(37, 99, 235, 0.12);
+                color: var(--primary-700);
+                font-weight: 600;
+            }
+
+            .hero-image-card {
+                position: relative;
+            }
+
+            .hero-image-card img {
+                width: 100%;
+                border-radius: 20px;
+                box-shadow: 0 30px 70px rgba(15, 23, 42, 0.18);
+                object-fit: cover;
+                min-height: 100%;
+            }
+
+            .hero-image-card .floating-card {
+                position: absolute;
+                bottom: -24px;
+                left: 32px;
+                background: #fff;
+                padding: 18px 22px;
+                border-radius: 16px;
+                box-shadow: 0 12px 36px rgba(15, 23, 42, 0.18);
+                border: 1px solid rgba(37, 99, 235, 0.12);
+                max-width: 280px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .floating-card h3 {
+                font-size: 1rem;
+                margin-bottom: 6px;
+                color: var(--primary-700);
+            }
+
+            .floating-card p {
+                font-size: 0.9rem;
+                color: var(--gray-600);
+            }
+
+            .floating-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(16, 185, 129, 0.18));
+                color: var(--primary-700);
+                font-weight: 600;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                padding: 6px 12px;
+                border-radius: 999px;
+            }
+
+            .section {
+                padding: 90px 24px;
+            }
+
+            .section-light {
+                background: #fff;
+            }
+
+            .section-dark {
+                background: linear-gradient(160deg, #0f172a, #1e293b 55%, #1e3a8a 100%);
+                color: #fff;
+            }
+
+            .section-header {
+                max-width: 780px;
+                margin: 0 auto 48px;
+                text-align: center;
+            }
+
+            .section-header span {
+                display: inline-block;
+                font-weight: 600;
+                letter-spacing: 0.08em;
+                font-size: 0.85rem;
+                color: var(--primary-600);
+                background: rgba(37, 99, 235, 0.12);
+                border-radius: 999px;
+                padding: 8px 18px;
+                margin-bottom: 14px;
+            }
+
+            .section-header h2 {
+                font-size: clamp(2rem, 2.6vw + 1rem, 2.6rem);
+                margin-bottom: 16px;
+                color: inherit;
+            }
+
+            .section-header p {
+                color: var(--gray-600);
+            }
+
+            .section-dark .section-header span {
+                background: rgba(255, 255, 255, 0.12);
+                color: #fff;
+            }
+
+            .section-dark .section-header p {
+                color: rgba(255, 255, 255, 0.75);
+            }
+
+            .offer-grid {
+                display: grid;
+                gap: 24px;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+
+            .offer-card {
+                background: #fff;
+                border-radius: 16px;
+                padding: 24px;
+                border: 1px solid rgba(37, 99, 235, 0.12);
+                box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+            }
+
+            .offer-icon {
+                display: inline-flex;
+                width: 54px;
+                height: 54px;
+                border-radius: 14px;
+                align-items: center;
+                justify-content: center;
+                background: rgba(37, 99, 235, 0.1);
+                color: var(--primary-700);
+                font-weight: 700;
+                font-size: 1.1rem;
+                margin-bottom: 18px;
+            }
+
+            .offer-card h3 {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+                color: var(--gray-900);
+            }
+
+            .offer-card p {
+                color: var(--gray-600);
+                font-size: 0.95rem;
+            }
+
+            .proof-grid {
+                display: grid;
+                gap: 24px;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+
+            .proof-card {
+                background: rgba(15, 23, 42, 0.45);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 18px;
+                padding: 26px;
+            }
+
+            .proof-card h3 {
+                font-size: 1.15rem;
+                margin-bottom: 12px;
+                color: #fff;
+            }
+
+            .proof-card p {
+                color: rgba(255, 255, 255, 0.75);
+                font-size: 0.98rem;
+            }
+
+            .proof-stats {
+                display: flex;
+                gap: 18px;
+                flex-wrap: wrap;
+                margin-top: 24px;
+            }
+
+            .stat {
+                background: rgba(15, 23, 42, 0.65);
+                border-radius: 14px;
+                padding: 18px 24px;
+            }
+
+            .stat strong {
+                display: block;
+                font-size: 1.6rem;
+                color: #fff;
+            }
+
+            .reviews-section {
+                position: relative;
+            }
+
+            .reviews-widget {
+                max-width: 760px;
+                margin: 0 auto;
+            }
+
+            .timeline {
+                max-width: 980px;
+                margin: 60px auto 0;
+                display: grid;
+                gap: 18px;
+            }
+
+            .timeline-item {
+                display: flex;
+                gap: 20px;
+                align-items: flex-start;
+                background: rgba(255, 255, 255, 0.85);
+                border-radius: 16px;
+                padding: 20px 24px;
+                border: 1px solid rgba(37, 99, 235, 0.12);
+                box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+            }
+
+            .timeline-item span {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border-radius: 12px;
+                background: rgba(37, 99, 235, 0.12);
+                color: var(--primary-700);
+                font-weight: 700;
+                font-size: 1rem;
+                flex-shrink: 0;
+            }
+
+            .booking-section {
+                background: #fff;
+                padding: 90px 24px;
+            }
+
+            .booking-inner {
+                max-width: 1100px;
+                margin: 0 auto;
+                background: #fff;
+                border-radius: 28px;
+                border: 1px solid rgba(37, 99, 235, 0.12);
+                box-shadow: 0 22px 60px rgba(15, 23, 42, 0.12);
+                overflow: hidden;
+            }
+
+            .booking-header {
+                padding: 40px 48px 24px;
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+                background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(30, 64, 175, 0.95));
+                color: #fff;
+            }
+
+            .booking-header h2 {
+                font-size: clamp(2rem, 1.8vw + 1.2rem, 2.6rem);
+                letter-spacing: -0.01em;
+            }
+
+            .booking-header p {
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 1.05rem;
+                max-width: 740px;
+            }
+
+            .booking-content {
+                padding: 32px 32px 48px;
+            }
+
+            .booking-content iframe {
+                width: 100%;
+                min-height: 720px;
+                border: none;
+                border-radius: 18px;
+                box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+            }
+
+            .faq-grid {
+                display: grid;
+                gap: 18px;
+                max-width: 960px;
+                margin: 0 auto;
+            }
+
+            .faq-card {
+                background: rgba(255, 255, 255, 0.92);
+                border-radius: 18px;
+                padding: 24px;
+                border: 1px solid rgba(37, 99, 235, 0.1);
+                box-shadow: 0 14px 32px rgba(15, 23, 42, 0.1);
+            }
+
+            .faq-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+                color: var(--gray-900);
+            }
+
+            .faq-card p {
+                color: var(--gray-600);
+            }
+
+            .footer {
+                padding: 48px 24px;
+                background: #0f172a;
+                color: rgba(255, 255, 255, 0.7);
+                text-align: center;
+                font-size: 0.92rem;
+            }
+
+            .footer a {
+                color: rgba(255, 255, 255, 0.85);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease;
+            }
+
+            .footer a:hover {
+                color: #fff;
+            }
+
+            .faq-card a {
+                color: var(--primary-600);
+                font-weight: 600;
+                text-decoration: none;
+            }
+
+            .faq-card a:hover {
+                text-decoration: underline;
+            }
+
+            @media (max-width: 1024px) {
+                .hero {
+                    padding: 100px 20px 70px;
+                }
+
+                .hero-inner {
+                    gap: 32px;
+                }
+
+                .section {
+                    padding: 70px 20px;
+                }
+
+                .booking-content iframe {
+                    min-height: 660px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                nav {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 12px;
+                    padding: 16px 20px;
+                }
+
+                .logo img {
+                    height: 42px;
+                }
+
+                .nav-cta {
+                    width: 100%;
+                    justify-content: flex-start;
+                    align-items: stretch;
+                    gap: 12px;
+                }
+
+                .phone-link,
+                .btn-secondary {
+                    width: 100%;
+                    justify-content: center;
+                    text-align: center;
+                }
+
+                .hero {
+                    padding-top: 80px;
+                }
+
+                .hero-offer {
+                    padding: 20px;
+                }
+
+                .hero-social {
+                    flex-direction: column;
+                    align-items: stretch;
+                }
+
+                .rating-card,
+                .trust-badges {
+                    width: 100%;
+                    justify-content: center;
+                }
+
+                .hero-image-card .floating-card {
+                    position: static;
+                    margin-top: 18px;
+                }
+
+                .section-header {
+                    margin-bottom: 36px;
+                }
+
+                .offer-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .proof-stats {
+                    flex-direction: column;
+                }
+
+                .reviews-widget {
+                    width: 100%;
+                }
+
+                .booking-header {
+                    padding: 28px 24px;
+                }
+
+                .booking-content {
+                    padding: 24px 20px 32px;
+                }
+
+                .booking-content iframe {
+                    min-height: 580px;
+                }
+
+                .timeline-item {
+                    flex-direction: column;
+                }
+
+                .timeline-item span {
+                    width: 38px;
+                    height: 38px;
+                }
+
+                .faq-card {
+                    padding: 20px;
+                }
+            }
+
+            @media (max-width: 540px) {
+                .urgency-bar {
+                    font-size: 0.85rem;
+                    padding: 10px 14px;
+                }
+
+                nav {
+                    padding: 16px;
+                }
+
+                .hero-copy h1 {
+                    font-size: 2.2rem;
+                }
+
+                .hero-subtitle {
+                    font-size: 1.05rem;
+                }
+
+                .btn-primary,
+                .btn-secondary {
+                    width: 100%;
+                }
+
+                .hero-offer ul {
+                    gap: 8px;
+                }
+
+                .hero-offer li {
+                    font-size: 0.95rem;
+                }
+
+                .section {
+                    padding: 60px 16px;
+                }
+
+                .booking-header h2 {
+                    font-size: 2rem;
+                }
+
+                .booking-content iframe {
+                    min-height: 520px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="urgency-bar">Ski Pain Free offer ends October 21. Lock in your $47 pre-season visit before spots fill.</div>
+
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681530adca200064432f760e.png" alt="Lakeside Spine & Injury Center logo">
+                </div>
+                <div class="nav-cta">
+                    <a class="phone-link" href="tel:3033510744">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M6.4 2H4a2 2 0 0 0-2 2c0 9.94 8.06 18 18 18a2 2 0 0 0 2-2v-2.38a2 2 0 0 0-1.72-2l-3.54-.59a2 2 0 0 0-1.92.78l-.84 1.12a1.2 1.2 0 0 1-1.62.27 13.47 13.47 0 0 1-5.26-5.26 1.2 1.2 0 0 1 .27-1.62l1.12-.84a2 2 0 0 0 .78-1.92L9.4 3.72A2 2 0 0 0 7.38 2Z"/>
+                        </svg>
+                        (303) 351-0744
+                    </a>
+                    <a class="btn-secondary" href="#book-now">Book in 60 seconds</a>
+                </div>
+            </nav>
+        </header>
+
+        <section class="hero" id="top">
+            <div class="hero-inner">
+                <div class="hero-copy">
+                    <h1>Ski Pain Free This Season: <span>$47 Pre-Season Tune-Up</span> with Dr. Andrew Allen</h1>
+                    <p class="hero-subtitle">Get your body working at peak before you ski or ride. Book before October 21 to secure this exam plus first treatment ($178 value) and leave with a slope-ready plan.</p>
+
+                    <div class="hero-offer">
+                        <div class="offer-badge">Seasonal Offer • Ends October 21</div>
+                        <h2>Your ski-ready tune-up includes</h2>
+                        <ul>
+                            <li><span>1</span>Pre-season consultation plus orthopedic & neurological exam tuned to ski and ride demands</li>
+                            <li><span>2</span>Functional movement & balance screening to spot weak links before you ski or ride</li>
+                            <li><span>3</span>First in-office treatment and targeted activation + recovery drills built for mountain athletes</li>
+                            <li><span>4</span>Show-up bonus: guidance to unlock $1,000 off our Ski Pain Free package with in-office care and at-home training</li>
+                        </ul>
+                    </div>
+
+                    <a class="btn-primary" href="#book-now">Book your pre-season visit</a>
+
+                    <p class="hero-note"><strong>Arrive for your appointment</strong> and discover how skiers and riders can save $1,000 on the full Ski Pain Free package—custom in-office care, at-home exercises, and bonus resources to keep every run pain free.</p>
+
+                    <div class="hero-social">
+                        <div class="rating-card">
+                            <div class="rating-stars">★★★★★</div>
+                            <div>Perfect 5.0 Google rating from local patients</div>
+                            <small>“Dr. Allen listened, treated, and had me lifting again in a week.” – Jenna R.</small>
+                        </div>
+                        <div class="trust-badges">
+                            <span>23+</span> Years of chiropractic expertise
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image-card">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80" alt="Skier and snowboarder warming up together before hitting the mountain">
+                    <div class="floating-card">
+                        <span class="floating-badge">Ski Pain Free</span>
+                        <h3>Ready for first chair or first drop</h3>
+                        <p>Skiers and riders usually feel stronger, more mobile, and confident before opening day after their first tune-up.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-light">
+            <div class="section-header">
+                <span>Inside Your Pre-Season Visit</span>
+                <h2>Assess, align, and activate before you ski or ride</h2>
+                <p>Dr. Allen blends tech-enabled diagnostics with 23+ years of clinical experience to fine-tune how you move so you can stack more mountain days without pain.</p>
+            </div>
+
+            <div class="offer-grid">
+                <div class="offer-card">
+                    <div class="offer-icon">01</div>
+                    <h3>Mobility & Balance Screening</h3>
+                    <p>Identify asymmetries, rotational limits, and inflammation that could steal power from your ski or ride.</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon">02</div>
+                    <h3>Hands-On Ski & Ride Tune-Up</h3>
+                    <p>Precise adjustments and soft-tissue work that unlock hips, spine, and shoulders so you feel stable on every run or drop.</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon">03</div>
+                    <h3>Ski Pain Free Blueprint</h3>
+                    <p>Leave with activation drills, recovery protocols, and clear next steps so you stay confident from first chair to last lap.</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-icon">04</div>
+                    <h3>Season-Long Game Plan</h3>
+                    <p>Lock in follow-ups that align with training, travel, and powder alerts so your body holds up all season long.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark">
+            <div class="section-header">
+                <span>Why Skiers & Riders Trust Lakeside</span>
+                <h2>Your mountain performance team</h2>
+                <p>We blend clinical precision with on-mountain strategy so you can chase powder, flow through trees, and recover fast without setbacks.</p>
+            </div>
+
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <h3>Recover between runs faster</h3>
+                    <p>Complex knee, hip, and back cases rebound in 4-6 visits thanks to multimodal treatment tailored to skiers and riders.</p>
+                </div>
+                <div class="proof-card">
+                    <h3>Integrated approach</h3>
+                    <p>We coordinate with PTs, strength coaches, and ski or ride instructors so everyone supports the same performance plan.</p>
+                </div>
+                <div class="proof-card">
+                    <h3>Transparent communication</h3>
+                    <p>No surprises—every adjustment is explained, and you learn how to maintain wins between powder days and park laps.</p>
+                </div>
+            </div>
+
+            <div class="proof-stats">
+                <div class="stat">
+                    <strong>15k+</strong>
+                    Adjustments delivered for active Colorado locals
+                </div>
+                <div class="stat">
+                    <strong>97%</strong>
+                    Skiers, riders, and mountain athletes report noticeable relief within the first week
+                </div>
+                <div class="stat">
+                    <strong>24 hrs</strong>
+                    Typical timeframe for new patient pre-season appointments
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-light reviews-section" id="reviews">
+            <div class="section-header">
+                <span>Real Patient Feedback</span>
+                <h2>What Wheat Ridge patients are sharing</h2>
+                <p>Read verified Google reviews from local neighbors who trust Dr. Allen and the Lakeside team.</p>
+            </div>
+            <div class="reviews-widget">
+                <!-- Elfsight Google Reviews -->
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-1d2418d3-e9d7-4056-b565-f9403bd1dc6a" data-elfsight-app-lazy></div>
+            </div>
+        </section>
+
+        <section class="section section-light" id="how-it-works">
+            <div class="section-header">
+                <span>How It Works</span>
+                <h2>Your next 7 days to feeling better</h2>
+                <p>Book now, show up ready to move, and we’ll guide the rest. Most patients see measurable changes in under a week.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span>Step 1</span>
+                    <div>
+                        <h3>Book your $47 visit</h3>
+                        <p>Choose a time that works for you below. You’ll get instant confirmation plus reminders so nothing slips.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span>Step 2</span>
+                    <div>
+                        <h3>Meet Dr. Allen</h3>
+                        <p>We dive into your history, goals, and movement patterns so you know exactly what’s causing your pain.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span>Step 3</span>
+                    <div>
+                        <h3>Get treated + go home with a plan</h3>
+                        <p>Walk out with relief plus a clear roadmap that blends in-office care with targeted exercises to keep you progressing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking-section" id="book-now">
+            <div class="booking-inner">
+                <div class="booking-header">
+                    <h2>Grab your $47 new patient visit now</h2>
+                    <p>Appointments fill up fast heading into the weekend. Choose a slot that works, answer a few quick questions, and you’re locked in.</p>
+                </div>
+                <div class="booking-content">
+                    <iframe title="Lakeside Spine & Injury Booking" src="https://api.leadconnectorhq.com/widget/bookings/functionalmovementassess-2a728a83-238a-4a1d-93bc-f32bb403a1134sih1q" loading="lazy" allowtransparency="true"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-light" id="faq">
+            <div class="section-header">
+                <span>FAQ</span>
+                <h2>Everything you need to know before booking</h2>
+                <p>If you still have questions after reading through these, call or email us at (303) 351-0744 or <a href="mailto:drallen@lakesidespineandinjury.com">drallen@lakesidespineandinjury.com</a>—our team is happy to help.</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h3>Do you accept insurance?</h3>
+                    <p>We’re a 100% cash-based clinic. That keeps pricing predictable and lets Dr. Allen deliver the care you need without insurance restrictions. If you’d like to submit for out-of-network reimbursement, we’ll provide an itemized receipt you can use with your carrier.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>What should I wear to the appointment?</h3>
+                    <p>Wear clothing you can easily move in—think athletic wear, jeans with stretch, or work attire you’re comfortable stretching in.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>How long will the first appointment take?</h3>
+                    <p>Plan for 45-60 minutes. We cover your consultation, movement testing, adjustment, and education in that first session.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Is this safe if I’ve had a previous injury or surgery?</h3>
+                    <p>Absolutely. Dr. Allen tailors every adjustment based on your history and collaborates with your physicians as needed.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            (c) 2025 Lakeside Spine & Injury Center • 6073 West 44th Avenue #101, Wheat Ridge, CO 80033 • <a href="tel:3033510744">Call (303) 351-0744</a> • <a href="mailto:drallen@lakesidespineandinjury.com">drallen@lakesidespineandinjury.com</a>
+        </footer>
+    </body>
+    </html>

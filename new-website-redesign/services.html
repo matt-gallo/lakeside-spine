@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Lakeside Spine & Injury | Chiropractic Care in Wheat Ridge, CO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background: #1e293b;
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .top-banner a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #334155;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1e293b;
+        }
+
+        .nav-cta {
+            background: #fbbf24;
+            color: #1e293b;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+        }
+
+        .icon-small {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        /* Mobile Menu Button */
+        .menu-btn {
+            background: #1e293b;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: white;
+            transition: all 0.3s;
+        }
+
+        .menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu nav {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .mobile-menu nav a {
+            color: #334155;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .mobile-cta-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 20px;
+            background: #f8fafc;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #1e293b;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services Tabs */
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #64748b;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .tab-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+            list-style: none;
+        }
+
+        .tab-item {
+            padding: 18px 24px;
+            background: #f8fafc;
+            color: #64748b;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .tab-item:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        .tab-item.active {
+            background: #1e293b;
+            color: white;
+            border-color: #1e293b;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 40px;
+            background: #f8fafc;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .tab-content p {
+            font-size: 17px;
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #1e293b;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn-primary {
+            background: #fbbf24;
+            color: #1e293b;
+            padding: 18px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #f59e0b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1e293b;
+            padding: 18px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background: #f1f5f9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Calendar Section */
+        .calendar-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .calendar-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #f8fafc;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #fbbf24;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .footer-section a:hover {
+            color: #fbbf24;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #cbd5e1;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: none !important;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+            }
+
+            .tab-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .tab-content {
+                padding: 25px;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner" style="cursor: pointer;" onclick="document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });">
+        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/></svg>
+        Limited Time: Complete Initial Patient Exam + Treatment $0 (Usually $47) | Click to Book Today
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681530adca200064432f760e.png" alt="Lakeside Spine & Injury">
+                </div>
+                <div class="nav-links">
+                    <a href="https://lakesidespineandinjury.com/home">Home</a>
+                    <a href="https://lakesidespineandinjury.com/services">Services</a>
+                    <a href="https://lakesidespineandinjury.com/faq">FAQ</a>
+                    <a href="https://lakesidespineandinjury.com/recovery-room">Blog</a>
+                    <a href="https://lakesidespineandinjury.com/home#booking">Calendar</a>
+                    <a href="tel:303-351-0744" class="nav-cta">
+                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        (303) 351-0744
+                    </a>
+                </div>
+                <button class="menu-btn" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav>
+            <a href="https://lakesidespineandinjury.com/home">Home</a>
+            <a href="https://lakesidespineandinjury.com/services">Services</a>
+            <a href="https://lakesidespineandinjury.com/faq">FAQ</a>
+            <a href="https://lakesidespineandinjury.com/recovery-room">Blog</a>
+            <a href="https://lakesidespineandinjury.com/home#booking">Calendar</a>
+        </nav>
+        <div class="mobile-cta-section">
+            <a href="https://lakesidespineandinjury.com/booking" class="btn-primary">Book Appointment</a>
+            <a href="tel:303-351-0744" class="btn-secondary">
+                <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                Call (303) 351-0744
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive chiropractic care and therapeutic treatments designed to get you pain-free and keep you moving.</p>
+        </div>
+    </section>
+
+    <!-- Services Tabs Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">What We Offer</h2>
+            <p class="section-subtitle">Evidence-based treatments tailored to your unique needs</p>
+
+            <ul class="tab-list">
+                <li class="tab-item active" data-tab="tab1">Spinal Manipulation</li>
+                <li class="tab-item" data-tab="tab2">Soft-Tissue Therapy</li>
+                <li class="tab-item" data-tab="tab3">Dry Needling</li>
+                <li class="tab-item" data-tab="tab4">Cupping</li>
+                <li class="tab-item" data-tab="tab5">Posture Analysis</li>
+                <li class="tab-item" data-tab="tab6">Therapeutic Exercise</li>
+            </ul>
+
+            <div id="tab1" class="tab-content active">
+                <h3>Spinal Manipulation</h3>
+                <p>Spinal manipulation is the cornerstone of effective back and neck pain relief—and at Lakeside Spine & Injury Center in Wheat Ridge, it's performed with precision born of over 23 years of experience. This hands-on technique involves a quick, controlled thrust applied to specific vertebrae to restore proper joint motion, alleviate nerve compression, and reduce muscular guarding. Think of it as resetting your spine's natural alignment so that you can move freely without pain.</p>
+                <p>Unlike generic "cracking" you might have experienced elsewhere, Dr. Allen's approach to chiropractic adjustments is fully individualized. He begins each session with a detailed history and exam to pinpoint the exact levels of dysfunction. Then, using a blend of traditional side-posture adjustment and gentle drop-table techniques, he unlocks stiff segments so you can bend, twist, and stand tall again. Patients often report an immediate sense of relief—less stiffness, improved range of motion, and lighter, more upright posture.</p>
+                <p>For busy professionals, active parents, and accident survivors alike, same-day availability means you don't wait weeks for a referral. Our cash-based model keeps your costs transparent: no hidden fees, no bait-and-switch care plans. If you're searching Google for "chiropractor Wheat Ridge" or "back pain relief near me," you've found your solution. Get off the sidelines of your life—schedule your free 30-minute evaluation today, and discover why precise spinal manipulation at Lakeside Spine & Injury Center is the fastest path back to pain-free living.</p>
+            </div>
+
+            <div id="tab2" class="tab-content">
+                <h3>Soft-Tissue Therapy</h3>
+                <p>When muscle knots, scar tissue, or chronic inflammation persist—even after adjustments—you need specialized soft-tissue therapy to break the cycle. At Lakeside Spine & Injury Center, Dr. Allen integrates manual massage with instrument-assisted soft-tissue mobilization (IASTM) to target the deep fascial layers and restore healthy tissue function. This powerful combination relieves pain, improves circulation, and speeds recovery from everything from sports sprains to auto-accident injuries.</p>
+                <p>During each session, your treatment begins with a thorough assessment of muscular tone and fascial restrictions. Using FDA-approved stainless steel tools, Dr. Allen gently strokes and scrapes along tight bands of tissue, creating a controlled microtrauma that stimulates the body's natural healing response. You'll feel a warm release as adhesions soften, and over the next 24–48 hours those muscles remodel stronger and more flexible. Many patients describe feeling "lighter" and more mobile the very next day.</p>
+                <p>Whether you're a weekend warrior recovering from a strained hamstring, a desk worker battling upper-back tension, or a cash-patient seeking holistic relief without insurance hassles, our deep-tissue therapy is designed for you. As a top "massage therapy Wheat Ridge" provider, we pride ourselves on delivering clinical-grade, results-driven care. Skip the generic rub-downs and experience IASTM that's as precise as a surgeon's scalpel—without the downtime. Book your free evaluation now and feel the difference targeted soft-tissue therapy can make.</p>
+            </div>
+
+            <div id="tab3" class="tab-content">
+                <h3>Dry Needling</h3>
+                <p>Dry needling is a powerful, evidence-based technique that targets trigger points and muscle dysfunction at the deepest level—and at Lakeside Spine & Injury Center, Dr. Allen's precision approach delivers rapid pain relief where traditional therapies fall short. Using sterile, single-use acupuncture needles, this technique directly penetrates tight muscle bands and fascial restrictions to release chronic tension, improve blood flow, and reset dysfunctional nerve patterns. It's not acupuncture—it's pure neuromuscular medicine.</p>
+                <p>Your dry needling session begins with a comprehensive muscle assessment to identify active trigger points and areas of restricted movement. Dr. Allen then strategically places ultra-thin needles into specific muscle fibers, often producing a brief "twitch response" that signals the release of built-up tension. Many patients experience immediate relief—reduced muscle spasms, increased range of motion, and decreased pain levels that can last for days or weeks. This makes dry needling especially effective for chronic neck pain, shoulder impingement, low back dysfunction, and sports-related muscle strains.</p>
+                <p>Perfect for athletes pushing through plateaus, office workers with persistent tension headaches, or auto-accident victims dealing with stubborn trigger points, our dry needling integrates seamlessly with chiropractic adjustments and therapeutic exercise. Searching for "dry needling Wheat Ridge" or "trigger point therapy Colorado"? With transparent cash pricing and immediate appointment availability, you're in control of your healing timeline. Schedule your free 30-minute evaluation today and discover how precise dry needling can unlock your body's natural healing potential and get you back to peak performance.</p>
+            </div>
+
+            <div id="tab4" class="tab-content">
+                <h3>Cupping</h3>
+                <p>Cupping therapy has surged in popularity—not as a trendy wellness fad, but because it truly works to relieve deep-seated muscle tension and promote healing. At Lakeside Spine & Injury Center, our certified cupping sessions use glass or silicone cups to create gentle suction on the skin, lifting the underlying fascia and improving local circulation. This increased blood flow speeds tissue repair, flushes metabolic waste, and reduces chronic pain in areas like the back, shoulders, and hips.</p>
+                <p>Your cupping experience begins with a consultation to identify pain hot-spots. We then place cups strategically—whether static or slides-and-glides—along your spine or tight muscle fibers. As the cups lift and release, you'll feel a comforting stretch that loosens knots and adhesions. Many patients notice improved flexibility and a reduction in pain marks for days afterward. Because cupping is non-invasive and drug-free, it's an ideal complement to chiropractic adjustments, dry needling, or therapeutic exercises.</p>
+                <p>Especially effective for auto-accident whiplash, scar-tissue after surgery, and overworked athletes, our cupping therapy is fully integrated into your personalized care plan. Looking for "cupping therapy Wheat Ridge" or "chiropractic wellness CO"? With transparent cash pricing and no high-pressure sales, our approach puts you in control of your healing. Claim your free 30-minute evaluation now to see how cupping can unlock your body's natural resilience and get you moving pain-free again.</p>
+            </div>
+
+            <div id="tab5" class="tab-content">
+                <h3>Posture Analysis</h3>
+                <p>Slouching at a desk or carrying one-sided loads can slowly erode your spine's health—and that's before you even step onto the field or hit the gym. Our in-depth posture analysis at Lakeside Spine & Injury Center unravels these hidden imbalances before they become chronic pain. Dr. Allen uses digital posture-screening technology and hands-on assessment to measure spinal curves, shoulder height, pelvic tilt, and gait mechanics. From there, he crafts a targeted plan of chiropractic adjustments, supportive exercises, and ergonomic tweaks.</p>
+                <p>In your posture assessment session, you'll stand against a wall grid while Dr. Allen captures key alignment markers. He then guides you through functional movement tests—like overhead reach and single-leg stance—to reveal compensations that could lead to back pain, neck strain, or joint wear. This holistic approach not only diagnoses your unique quirks but also empowers you with corrective drills and workstation modifications. Imagine no more nagging neck tension at your computer or debilitating hip pain after a weekend hike.</p>
+                <p>As a premier "posture correction Wheat Ridge" provider, we blend clinical expertise with personalized attention. Whether you're a busy parent juggling kids' sports schedules or a cash-patient rebuilding after an auto injury, our posture analysis is the foundation for lasting relief. Skip generic stretches—get a roadmap that's custom-tailored to your body's blueprint. Schedule your free evaluation today and stand taller, move better, and protect your spine for decades to come.</p>
+            </div>
+
+            <div id="tab6" class="tab-content">
+                <h3>Therapeutic Exercise</h3>
+                <p>Strength is the best defense against pain—and nothing beats a customized therapeutic exercise program to reinforce your chiropractic care. At Lakeside Spine & Injury Center, every exercise regimen is designed around your specific diagnosis and lifestyle demands. Whether you're recovering from an auto accident, chasing a 5K, or simply aiming to stay active in midlife, our targeted drills build core stability, improve joint mobility, and prevent future injuries.</p>
+                <p>During your first session, Dr. Allen reviews your posture analysis and functional joint assessment to select the right exercises: from gentle McKenzie stretches for low back pain to proprioceptive balance drills that sharpen ankle stability. Each movement is taught in-office with hands-on coaching—so you nail the proper form. We then equip you with video links and printed guides, ensuring you can confidently perform your home routine. Over time, we progress your plan by adjusting reps, resistance, and movement complexity to match your gains.</p>
+                <p>Therapeutic exercise not only cements the benefits of your spinal adjustments and soft-tissue work but also fosters long-term resilience. As a top "chiropractor Wheat Ridge" for cash patients, we take pride in results you'll feel—and measure—week to week. Get off the endless cycle of temporary relief and start building genuine strength. Claim your free 30-minute evaluation now, and let's create a clear path from pain to performance that you control.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Healing Journey?</h2>
+            <p>Schedule your free 30-minute evaluation and discover which treatment is right for you.</p>
+            <a href="#booking" onclick="event.preventDefault(); document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });" class="btn-primary">Book Your Free Evaluation</a>
+            <a href="tel:303-351-0744" class="btn-secondary">
+                <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                Call (303) 351-0744
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="background: #f8fafc; padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Get answers to common questions about our services</p>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="background: white; margin-bottom: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <div class="faq-question" style="padding: 25px; font-size: 18px; font-weight: 700; color: #1e293b; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What conditions can chiropractic care help with?
+                        <span class="faq-toggle" style="font-size: 24px; color: #fbbf24;">+</span>
+                    </div>
+                    <div class="faq-answer" style="padding: 0 25px 25px; color: #475569; line-height: 1.7; display: none;">
+                        Chiropractic care is highly effective for back pain, neck pain, headaches, migraines, sciatica, sports injuries, auto accident injuries, joint pain, and many musculoskeletal conditions. We focus on treating the root cause, not just masking symptoms.
+                    </div>
+                </div>
+
+                <div style="background: white; margin-bottom: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <div class="faq-question" style="padding: 25px; font-size: 18px; font-weight: 700; color: #1e293b; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Is chiropractic care safe, and are the adjustments painful?
+                        <span class="faq-toggle" style="font-size: 24px; color: #fbbf24;">+</span>
+                    </div>
+                    <div class="faq-answer" style="padding: 0 25px 25px; color: #475569; line-height: 1.7; display: none;">
+                        Yes, chiropractic care is extremely safe when performed by a licensed professional. Most adjustments are not painful—many patients describe immediate relief and improved mobility. We tailor every adjustment to your comfort level and health needs.
+                    </div>
+                </div>
+
+                <div style="background: white; margin-bottom: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <div class="faq-question" style="padding: 25px; font-size: 18px; font-weight: 700; color: #1e293b; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        How many sessions will I need to see results?
+                        <span class="faq-toggle" style="font-size: 24px; color: #fbbf24;">+</span>
+                    </div>
+                    <div class="faq-answer" style="padding: 0 25px 25px; color: #475569; line-height: 1.7; display: none;">
+                        Every patient is different. Some experience relief after 1-2 sessions, while others with chronic conditions may need ongoing care. During your evaluation, we'll give you a clear, honest timeline based on your specific condition—no guesswork or endless appointments.
+                    </div>
+                </div>
+
+                <div style="background: white; margin-bottom: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <div class="faq-question" style="padding: 25px; font-size: 18px; font-weight: 700; color: #1e293b; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Do you accept insurance?
+                        <span class="faq-toggle" style="font-size: 24px; color: #fbbf24;">+</span>
+                    </div>
+                    <div class="faq-answer" style="padding: 0 25px 25px; color: #475569; line-height: 1.7; display: none;">
+                        We operate outside the insurance system to provide you with transparent pricing and avoid the bureaucratic delays. This allows us to focus 100% on your care, not dealing with insurance companies. We offer affordable cash rates and flexible payment options.
+                    </div>
+                </div>
+
+                <div style="background: white; margin-bottom: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <div class="faq-question" style="padding: 25px; font-size: 18px; font-weight: 700; color: #1e293b; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What should I expect during my first visit?
+                        <span class="faq-toggle" style="font-size: 24px; color: #fbbf24;">+</span>
+                    </div>
+                    <div class="faq-answer" style="padding: 0 25px 25px; color: #475569; line-height: 1.7; display: none;">
+                        Your first visit includes a comprehensive 30-minute evaluation where we'll review your health history, discuss your symptoms and goals, perform a physical assessment, and create a personalized treatment plan. If appropriate, we may begin treatment during your first visit.
+                    </div>
+                </div>
+
+                <div style="background: white; margin-bottom: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <div class="faq-question" style="padding: 25px; font-size: 18px; font-weight: 700; color: #1e293b; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What is dry needling and how is it different from acupuncture?
+                        <span class="faq-toggle" style="font-size: 24px; color: #fbbf24;">+</span>
+                    </div>
+                    <div class="faq-answer" style="padding: 0 25px 25px; color: #475569; line-height: 1.7; display: none;">
+                        Dry needling is a western medicine technique that targets trigger points and muscle dysfunction using thin needles. Unlike acupuncture (which is based on traditional Chinese medicine), dry needling is based on anatomy and neuromuscular science to release muscle tension and improve mobility.
+                    </div>
+                </div>
+
+                <div style="background: white; margin-bottom: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <div class="faq-question" style="padding: 25px; font-size: 18px; font-weight: 700; color: #1e293b; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Can I combine different treatments in one visit?
+                        <span class="faq-toggle" style="font-size: 24px; color: #fbbf24;">+</span>
+                    </div>
+                    <div class="faq-answer" style="padding: 0 25px 25px; color: #475569; line-height: 1.7; display: none;">
+                        Absolutely! We often combine multiple therapies for optimal results. For example, a typical session might include spinal manipulation, soft-tissue therapy, and therapeutic exercises. Dr. Allen will create a personalized treatment plan based on your specific needs.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section" id="booking">
+        <div class="container">
+            <h2 class="section-title">Book Your Appointment</h2>
+            <p class="section-subtitle">Choose a time that works for you—same-day appointments available</p>
+
+            <div class="calendar-container">
+                <iframe src="https://api.leadconnectorhq.com/widget/booking/qM3VFHkmLpHDgowLVqU8" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="G5AX7MJKuh61z8L9v3YF_1765316416731"></iframe>
+                <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lakeside Spine & Injury</h3>
+                    <p>Personalized chiropractic care in Wheat Ridge, Colorado. No insurance headaches, just real results.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="https://lakesidespineandinjury.com/home">Home</a>
+                    <a href="https://lakesidespineandinjury.com/services">Services</a>
+                    <a href="https://lakesidespineandinjury.com/faq">FAQ</a>
+                    <a href="https://lakesidespineandinjury.com/recovery-room">Blog</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>
+                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        (303) 351-0744
+                    </p>
+                    <p>
+                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                        info@lakesidespineandinjury.com
+                    </p>
+                    <p>
+                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                        6021 West 44th Avenue #101<br>Wheat Ridge, CO 80033
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p>Saturday: By Appointment</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; 2025 Lakeside Spine & Injury. All rights reserved. | <a href="#" style="color: #fbbf24;">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.querySelector('.menu-btn');
+            menu.classList.toggle('show');
+            btn.classList.toggle('active');
+        }
+
+        // Services tabs
+        document.querySelectorAll('.tab-item').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Show corresponding content
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const toggle = question.querySelector('.faq-toggle');
+
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    toggle.textContent = '+';
+                } else {
+                    answer.style.display = 'block';
+                    toggle.textContent = '−';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakeside Spine Mobile Navigation Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        .demo-container {
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding-top: 150px;
+        }
+        
+        .demo-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .demo-content h2 {
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+        
+        .demo-content p {
+            line-height: 1.6;
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+        
+        .mobile-test-note {
+            background: #fef3c7;
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+            margin: 20px 0;
+        }
+        
+        .mobile-test-note strong {
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include the optimized header -->
+    <div id="header-container"></div>
+    
+    <div class="demo-container">
+        <div class="demo-content">
+            <h2>Mobile Navigation Test Page</h2>
+            <p>This page demonstrates the optimized mobile navigation for Lakeside Spine & Injury.</p>
+            
+            <div class="mobile-test-note">
+                <strong>Mobile Testing Instructions:</strong><br>
+                1. Resize your browser window to mobile width (< 768px) or use browser dev tools<br>
+                2. The navigation menu should collapse into a hamburger menu on mobile<br>
+                3. Click the hamburger icon to toggle the mobile menu<br>
+                4. The menu should slide down with navigation links<br>
+                5. Clicking outside or on a link should close the menu
+            </div>
+            
+            <h3>Key Mobile Optimizations:</h3>
+            <ul>
+                <li><strong>Hamburger Menu:</strong> Clean toggle menu for mobile devices</li>
+                <li><strong>Touch-Friendly:</strong> Larger tap targets for phone and tablet users</li>
+                <li><strong>Responsive Layout:</strong> Header adapts smoothly from desktop to mobile</li>
+                <li><strong>Accessibility:</strong> Proper ARIA labels and keyboard navigation</li>
+                <li><strong>Performance:</strong> Lightweight JavaScript with no external dependencies</li>
+            </ul>
+            
+            <h3>Breakpoints:</h3>
+            <ul>
+                <li><strong>Desktop:</strong> Full horizontal navigation (768px+)</li>
+                <li><strong>Tablet:</strong> Optimized spacing and sizing (480px - 768px)</li>
+                <li><strong>Mobile:</strong> Vertical stack layout (< 480px)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Load the header component
+        fetch('./lakeside-header-standalone.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-container').innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error loading header:', error);
+                document.getElementById('header-container').innerHTML = 
+                    '<p style="text-align: center; color: red; padding: 20px;">Error loading header. Please ensure lakeside-header-standalone.html is in the same directory.</p>';
+            });
+    </script>
+</body>
+</html>

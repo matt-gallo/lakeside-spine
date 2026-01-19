@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - Lakeside Spine & Injury Center | Wheat Ridge Chiropractor</title>
+    <meta name="description" content="Get answers to common questions about chiropractic care, back pain treatment, auto accident injuries, and more at Lakeside Spine & Injury Center in Wheat Ridge, CO.">
+</head>
+<body>
+
+<style>
+.faq-page {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f1419 100%);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.faq-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Hero Section */
+.faq-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #00aff2 0%, #0073e6 100%);
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  max-width: 900px;
+}
+
+.faq-hero h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.faq-hero p {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: #ffffff;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  font-weight: 400;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+/* Services Showcase */
+.services-showcase {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.service-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 2.5rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 175, 242, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.service-card:hover::before {
+  left: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 175, 242, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 175, 242, 0.1);
+}
+
+.service-card.active {
+  border-color: #00aff2;
+  background: linear-gradient(135deg, rgba(0, 175, 242, 0.15) 0%, rgba(0, 115, 230, 0.1) 100%);
+  transform: scale(1.02);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #00aff2 0%, #0073e6 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: #cccccc;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Interactive FAQ Navigation */
+.faq-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 4rem 0;
+  position: sticky;
+  top: 2rem;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(20px);
+  padding: 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-pill {
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-pill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 175, 242, 0.2), transparent);
+  transition: left 0.3s ease;
+}
+
+.nav-pill:hover::before {
+  left: 100%;
+}
+
+.nav-pill:hover,
+.nav-pill.active {
+  background: linear-gradient(135deg, #00aff2 0%, #0073e6 100%);
+  color: #ffffff;
+  border-color: #00aff2;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 175, 242, 0.3);
+}
+
+/* Modern FAQ Sections */
+.faq-section {
+  margin: 6rem 0;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.faq-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-section h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #00aff2 0%, #0073e6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 3rem;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.faq-item {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  transition: all 0.4s ease;
+}
+
+.faq-item:hover {
+  border-color: rgba(0, 175, 242, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.faq-question {
+  padding: 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.faq-question:hover {
+  background: rgba(0, 175, 242, 0.05);
+}
+
+.faq-question-text {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.faq-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00aff2 0%, #0073e6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+  background: linear-gradient(135deg, #0073e6 0%, #00aff2 100%);
+}
+
+.faq-answer {
+  padding: 0 2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.faq-item.active .faq-answer {
+  padding: 0 2rem 2rem 2rem;
+  max-height: 800px;
+}
+
+.faq-answer p {
+  color: #cccccc;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Modern CTA */
+.modern-cta {
+  text-align: center;
+  padding: 6rem 2rem;
+  margin: 6rem 0;
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.cta-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #00aff2 0%, #0073e6 100%);
+  z-index: 1;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 10;
+}
+
+.modern-cta h3 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.modern-cta p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modern-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 18px 36px;
+  background: #ffffff;
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 175, 242, 0.1), transparent);
+  transition: left 0.3s ease;
+}
+
+.modern-cta-btn:hover::before {
+  left: 100%;
+}
+
+.modern-cta-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-question {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+  .services-showcase {
+    padding: 4rem 0;
+  }
+
+  .service-card {
+    padding: 2rem;
+  }
+
+  .faq-navigation {
+    gap: 0.5rem;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-pill {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    min-width: 120px;
+    text-align: center;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="faq-page">
+  <!-- Hero Section -->
+  <div class="faq-hero">
+    <div class="hero-background"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>Expert Answers to Your Questions</h1>
+        <p>Get comprehensive answers about chiropractic care, treatments, and wellness from Dr. Allen at Lakeside Spine & Injury Center in Wheat Ridge</p>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">23+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">5000+</span>
+            <span class="stat-label">Patients Treated</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Success Rate</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">4.9★</span>
+            <span class="stat-label">Google Rating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Showcase -->
+  <div class="services-showcase">
+    <div class="container">
+      <div class="services-grid">
+        <div class="service-card" data-service="spinal">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 7l20 10M2 17l20-10"/>
+            </svg>
+          </div>
+          <h3>Spinal Manipulation</h3>
+          <p>Precise adjustments to restore proper joint motion and alleviate nerve compression with over 23 years of expertise.</p>
+        </div>
+        
+        <div class="service-card" data-service="soft-tissue">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 8v8M8 12h8"/>
+            </svg>
+          </div>
+          <h3>Soft-Tissue Therapy</h3>
+          <p>Advanced IASTM techniques using specialized tools to break down scar tissue and promote healing.</p>
+        </div>
+        
+        <div class="service-card" data-service="dry-needling">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>Dry Needling</h3>
+          <p>Targeted needle therapy to release muscle trigger points and restore normal function effectively.</p>
+        </div>
+        
+        <div class="service-card" data-service="cupping">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+            </svg>
+          </div>
+          <h3>Cupping Therapy</h3>
+          <p>Improve circulation and reduce muscle tension through traditional cupping techniques.</p>
+        </div>
+        
+        <div class="service-card" data-service="posture">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h3>Posture Analysis</h3>
+          <p>Comprehensive assessment and correction of postural imbalances affecting your spine.</p>
+        </div>
+        
+        <div class="service-card" data-service="exercise">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <h3>Therapeutic Exercise</h3>
+          <p>Customized rehabilitation programs to strengthen and prevent future injuries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Interactive Navigation -->
+    <div class="faq-navigation">
+      <a href="#general" class="nav-pill active">General Care</a>
+      <a href="#treatments" class="nav-pill">Treatments</a>
+      <a href="#conditions" class="nav-pill">Conditions</a>
+      <a href="#auto-accident" class="nav-pill">Auto Accidents</a>
+      <a href="#insurance" class="nav-pill">Insurance & Costs</a>
+      <a href="#appointments" class="nav-pill">Appointments</a>
+    </div>
+
+    <!-- General Chiropractic Care -->
+    <div id="general" class="faq-section active">
+      <h2>General Chiropractic Care</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-question-text">What is chiropractic care?</div>
+            <div class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <p>Chiropractic care is a healthcare discipline that focuses on diagnosing and treating neuromuscular disorders, with a special emphasis on treating these conditions through manual adjustment and manipulation of the spine. At Lakeside Spine & Injury Center, Dr. Allen uses precise, hands-on techniques to restore proper joint motion, reduce pain, and improve your body's natural healing ability.</p>
+            <p>Unlike traditional medicine that often relies on medications to mask symptoms, chiropractic care addresses the root cause of your pain and dysfunction, helping your body heal naturally without drugs or surgery.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-question-text">Is chiropractic care safe?</div>
+            <div class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, chiropractic care is extremely safe when performed by a licensed professional. Dr. Allen has over 23 years of experience and uses evidence-based techniques that are among the safest treatments available for spine-related conditions.</p>
+            <p>Serious complications from chiropractic adjustments are exceptionally rare, occurring in less than 1 in 2 million treatments. Most patients experience immediate relief with no adverse effects.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-question-text">What makes the "popping" sound during adjustments?</div>
+            <div class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <p>The popping sound you hear during a chiropractic adjustment is caused by the release of nitrogen gas bubbles from the synovial fluid in your joints. This phenomenon is called cavitation and is completely harmless—similar to cracking your knuckles.</p>
+            <p>The sound doesn't indicate the effectiveness of the treatment. Some adjustments are silent yet equally beneficial for restoring proper joint function and reducing pain.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-question-text">Do I need a referral to see a chiropractor?</div>
+            <div class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <p>No referral is needed to see Dr. Allen at Lakeside Spine & Injury Center. As a primary healthcare provider, you can schedule directly with our office. This allows you to get the care you need without delays from other healthcare providers.</p>
+            <p>However, some insurance plans may require a referral for coverage, so it's worth checking your specific plan details if you're using insurance.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-question-text">Can children receive chiropractic care?</div>
+            <div class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <p>Absolutely! Children can safely benefit from gentle chiropractic care. Kids are naturally active and may experience falls, sports injuries, or postural issues from heavy backpacks and prolonged sitting.</p>
+            <p>Dr. Allen uses age-appropriate techniques that are much gentler than adult treatments. Many parents bring their children for wellness care to support proper growth and development, improve posture, and maintain optimal spinal health.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-question-text">Will I have to keep coming back forever?</div>
+            <div class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <p>Not at all. Dr. Allen's goal is to get you better as quickly as possible and teach you how to maintain your improvement. The number of visits depends on your specific condition, how long you've had the problem, and your overall health.</p>
+            <p>Some patients feel better after just a few visits, while others with chronic conditions may need ongoing care. You're always in control of your treatment plan, and there are never high-pressure sales tactics or long-term contracts at our cash-based practice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Treatments & Techniques -->
+    <div id="treatments" class="faq-section">
+      <h2>Treatments & Techniques</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What treatment techniques do you use?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>At Lakeside Spine & Injury Center, we offer a comprehensive range of evidence-based treatments including spinal manipulation, soft-tissue therapy with IASTM tools, dry needling, cupping therapy, posture analysis, and therapeutic exercise programs.</p>
+          <p>Dr. Allen customizes your treatment plan based on your specific condition, preferences, and goals. This integrated approach addresses not just your symptoms, but the underlying cause of your pain.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What is dry needling and how does it differ from acupuncture?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Dry needling is a technique that uses thin needles to target muscle trigger points and release tension. Unlike acupuncture, which is based on traditional Chinese medicine and energy meridians, dry needling is grounded in Western medicine and focuses on neuromuscular dysfunction.</p>
+          <p>Dr. Allen uses dry needling to treat specific muscle knots and fascial restrictions that don't respond well to other treatments. Many patients experience immediate relief from chronic muscle tension and improved range of motion.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Does dry needling hurt?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Most patients describe dry needling as minimally uncomfortable. You might feel a brief, mild sting when the needle is inserted, similar to a mosquito bite. When the needle hits a trigger point, you may feel a muscle twitch or cramping sensation that lasts just a few seconds.</p>
+          <p>Many patients are surprised by how tolerable the treatment is and often feel immediate relief as muscle tension releases during the session.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What is IASTM (Instrument-Assisted Soft Tissue Mobilization)?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>IASTM is a technique that uses specially designed stainless steel tools to detect and treat areas of soft tissue fibrosis or chronic inflammation. These FDA-approved tools allow Dr. Allen to precisely target scar tissue and adhesions that limit mobility and cause pain.</p>
+          <p>The treatment creates controlled micro-trauma that stimulates your body's natural healing response, breaking down scar tissue and promoting the formation of healthy, functional tissue.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How does cupping therapy work?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Cupping uses glass or silicone cups to create suction on the skin, lifting the underlying fascia and improving circulation. This increased blood flow helps reduce muscle tension, promotes healing, and flushes metabolic waste from tissues.</p>
+          <p>The treatment feels like a deep, stretching sensation and is quite relaxing for most patients. Cupping integrates perfectly with chiropractic adjustments and other therapies to enhance your overall treatment results.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Will adjustments hurt?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Chiropractic adjustments are generally not painful. Most patients experience immediate relief and describe the sensation as satisfying, like "scratching an itch you couldn't reach." Dr. Allen uses gentle, precise techniques tailored to your comfort level.</p>
+          <p>Some patients may experience mild soreness similar to post-exercise muscle fatigue for 24-48 hours after treatment, which is completely normal as your body adjusts to improved alignment.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conditions Treated -->
+    <div id="conditions" class="faq-section">
+      <h2>Conditions We Treat</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What conditions do you treat?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We specialize in treating a wide range of musculoskeletal conditions including back pain, neck pain, headaches, sciatica, herniated discs, pinched nerves, sports injuries, auto accident injuries, work-related injuries, arthritis pain, and postural problems.</p>
+          <p>Dr. Allen also treats conditions like carpal tunnel syndrome, shoulder impingement, hip pain, knee pain, and TMJ disorders. If you're unsure whether we can help your specific condition, schedule a free consultation to find out.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Can you help with chronic pain?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, chronic pain is one of our specialties. Dr. Allen takes a comprehensive approach to identify the root causes of your persistent pain, rather than just treating symptoms. This may involve addressing spinal misalignments, muscle imbalances, postural issues, and movement dysfunctions.</p>
+          <p>Many patients who have suffered for months or years find significant relief through our integrated treatment approach combining adjustments, soft tissue work, and corrective exercises.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Do you treat headaches and migraines?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely. Many headaches originate from tension in the neck muscles, cervical spine misalignments, or poor posture. Dr. Allen has successfully treated thousands of headache sufferers over his 23-year career.</p>
+          <p>Through spinal adjustments, soft tissue therapy, and postural correction, many patients experience significant reduction in headache frequency and intensity, often eliminating their need for pain medications.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Can chiropractic care help with sciatica?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, chiropractic care is highly effective for sciatica. Dr. Allen uses specific techniques to address the underlying causes of sciatic nerve irritation, whether it's from a herniated disc, piriformis syndrome, or spinal misalignment.</p>
+          <p>Treatment typically includes targeted spinal adjustments, soft tissue therapy to reduce muscle tension, and exercises to improve core stability and prevent recurrence of symptoms.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What about herniated or bulging discs?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Herniated and bulging discs respond very well to conservative chiropractic care. Dr. Allen uses gentle, specific techniques like flexion-distraction and spinal decompression to reduce pressure on affected discs and surrounding nerves.</p>
+          <p>Many patients avoid surgery through proper chiropractic treatment combined with therapeutic exercises and lifestyle modifications. Early intervention typically leads to better outcomes.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Can you help with sports injuries?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Sports injury treatment is a major focus at our clinic. Dr. Allen works with athletes of all levels, from weekend warriors to competitive athletes, treating everything from acute injuries to overuse conditions.</p>
+          <p>Our approach includes injury treatment, biomechanical analysis, corrective exercises, and injury prevention strategies to keep you performing at your best and reduce future injury risk.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auto Accident Injuries -->
+    <div id="auto-accident" class="faq-section">
+      <h2>Auto Accident Injuries</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Should I see a chiropractor after a car accident?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, it's highly recommended to see a chiropractor after any car accident, even if you feel fine initially. Many auto accident injuries like whiplash don't show symptoms immediately due to adrenaline and shock masking pain.</p>
+          <p>Early chiropractic intervention can prevent minor injuries from becoming chronic problems and help document your injuries for insurance purposes. Dr. Allen offers same-day appointments for accident victims.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What is whiplash and how do you treat it?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Whiplash occurs when your head is suddenly jerked backward and forward during an accident, causing injury to the cervical spine, muscles, and ligaments. Symptoms can include neck pain, headaches, dizziness, shoulder pain, and cognitive issues.</p>
+          <p>Dr. Allen treats whiplash with gentle spinal adjustments, soft tissue therapy, dry needling for muscle spasms, and rehabilitation exercises to restore normal neck function and prevent chronic pain.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How long does it take to recover from whiplash?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Recovery time varies depending on the severity of injury and how quickly treatment begins. Mild cases may resolve in 2-4 weeks, while more severe injuries can take several months. Early intervention typically leads to faster, more complete recovery.</p>
+          <p>Factors affecting recovery include age, overall health, previous injuries, and compliance with treatment recommendations. Dr. Allen provides realistic timelines based on your specific case.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Will my auto insurance cover chiropractic treatment?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Most auto insurance policies include Personal Injury Protection (PIP) or Medical Payments (MedPay) coverage that covers chiropractic care after an accident. We can help you navigate your insurance benefits and work directly with your insurance company.</p>
+          <p>Our cash-based model also means transparent pricing with no surprise bills or complicated insurance hassles if you prefer to pay directly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Do I need to see a medical doctor first?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>While it's not required, it may be beneficial to see a medical doctor immediately after a serious accident to rule out fractures or other serious injuries. Dr. Allen can coordinate with your medical doctor and refer you for imaging if needed.</p>
+          <p>For minor accidents, you can start with chiropractic care, and Dr. Allen will refer you to appropriate specialists if your condition requires additional medical attention.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What should I do immediately after an accident?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Seek immediate medical attention if you suspect serious injury. For minor accidents, document everything, get insurance information, and schedule a chiropractic evaluation within 24-48 hours, even if you feel fine.</p>
+          <p>Early documentation and treatment are crucial for both your health and any potential insurance claims. Don't wait for pain to develop—prevention is always better than treatment.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Insurance & Costs -->
+    <div id="insurance" class="faq-section">
+      <h2>Insurance & Costs</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Do you accept insurance?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Lakeside Spine & Injury Center operates on a cash-based model, which means we don't directly bill insurance companies for regular visits. However, we can provide you with all necessary documentation to submit to your insurance for potential reimbursement.</p>
+          <p>This approach eliminates insurance hassles, reduces costs, and allows Dr. Allen to focus on your care rather than insurance paperwork and restrictions.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What are your fees?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Our transparent pricing includes a comprehensive initial consultation and treatment for $150, with follow-up visits at $75. Additional therapies like dry needling or IASTM may have modest additional fees, but everything is disclosed upfront with no hidden costs.</p>
+          <p>We offer package discounts for multiple visits and payment plans when needed. Our cash prices are often less than insurance co-pays and deductibles at other facilities.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I use my HSA or FSA?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! Chiropractic care is an eligible expense for Health Savings Accounts (HSA) and Flexible Spending Accounts (FSA). We provide detailed receipts with all necessary codes for your reimbursement.</p>
+          <p>Using these pre-tax dollars makes your care even more affordable and is a great way to maximize your healthcare benefits.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Why don't you take insurance directly?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Our cash-based model allows us to focus entirely on patient care without insurance company interference in treatment decisions. This means no prior authorizations, no limited visit restrictions, and no dictating which treatments you can receive.</p>
+          <p>It also reduces overhead costs, allowing us to keep fees reasonable while providing longer appointment times and more personalized attention than insurance-based practices.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Do you offer payment plans?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, we understand that healthcare costs can be challenging. We offer flexible payment arrangements for patients who need them. Our goal is to never let finances prevent you from getting the care you need.</p>
+          <p>We also offer discounted packages for multiple visits, which can significantly reduce your overall cost of care.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Is chiropractic care tax deductible?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Chiropractic care may be tax deductible as a medical expense if your total medical expenses exceed 7.5% of your adjusted gross income. We provide detailed receipts with proper medical codes for your tax preparation.</p>
+          <p>Consult with your tax professional for specific guidance based on your individual tax situation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Appointments & Logistics -->
+    <div id="appointments" class="faq-section">
+      <h2>Appointments & Logistics</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I schedule an appointment?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Scheduling is easy! Call our office at (303) 422-7842 to speak directly with our friendly staff. We offer same-day appointments for urgent conditions and priority scheduling for auto accident victims.</p>
+          <p>New patients receive a free 30-minute consultation to determine if chiropractic care is right for their condition before committing to treatment.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What should I expect during my first visit?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Your first visit includes a comprehensive consultation where Dr. Allen reviews your health history, discusses your symptoms and goals, and performs a thorough physical examination including orthopedic and neurological tests.</p>
+          <p>If appropriate, you may receive treatment during your first visit. Dr. Allen will explain his findings, discuss treatment options, and answer all your questions so you can make an informed decision about your care.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How long do appointments typically last?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Initial consultations take about 45-60 minutes to ensure a thorough evaluation. Follow-up treatment visits typically last 15-30 minutes, depending on the treatments provided.</p>
+          <p>Unlike insurance-based practices that rush patients through, our cash model allows adequate time for proper treatment and patient education.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Do you offer same-day appointments?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! We understand that pain doesn't wait for convenient scheduling. We reserve same-day appointments for urgent conditions and auto accident victims who need immediate care.</p>
+          <p>Call first thing in the morning for the best chance of same-day availability, or let us know if you're willing to come in during cancellation slots.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What should I wear to my appointment?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Wear comfortable, loose-fitting clothing that allows for easy movement and access to the areas being treated. Athletic wear or casual clothes work perfectly. Avoid dresses or restrictive clothing.</p>
+          <p>You don't need to change into a gown—Dr. Allen can work effectively with you fully clothed, maintaining your comfort and dignity throughout treatment.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What if I need to cancel or reschedule?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We understand that schedules change. Please give us at least 24 hours' notice for cancellations or rescheduling to avoid any cancellation fees. This courtesy also allows us to offer your slot to another patient in need.</p>
+          <p>For emergencies or illness, we're flexible and understanding. Just call as soon as possible to let us know about changes to your appointment.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Are you located in Wheat Ridge?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, Lakeside Spine & Injury Center is conveniently located in Wheat Ridge, Colorado, serving patients throughout the Denver metro area including Arvada, Lakewood, Golden, and surrounding communities.</p>
+          <p>Our location offers easy access with ample parking and is designed to provide a comfortable, healing environment for all our patients.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modern-cta">
+      <div class="cta-background"></div>
+      <div class="cta-content">
+        <h3>Still Have Questions?</h3>
+        <p>Get personalized answers and discover if chiropractic care is right for you with a free 30-minute consultation</p>
+        <a href="tel:3034227842" class="modern-cta-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          Schedule Your Free Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Service Cards Interaction
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('click', () => {
+    // Remove active class from all cards
+    document.querySelectorAll('.service-card').forEach(c => c.classList.remove('active'));
+    
+    // Add active class to clicked card
+    card.classList.add('active');
+    
+    // Optional: Add animation effect or show related content
+    const serviceType = card.dataset.service;
+    console.log(`Selected service: ${serviceType}`);
+  });
+});
+
+// Modern FAQ Toggle Functionality
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const faqItem = question.parentElement;
+    const isActive = faqItem.classList.contains('active');
+
+    // Close all other FAQ items in the same section
+    const currentSection = faqItem.closest('.faq-section');
+    currentSection.querySelectorAll('.faq-item').forEach(item => {
+      item.classList.remove('active');
+    });
+
+    // Toggle current item
+    if (!isActive) {
+      faqItem.classList.add('active');
+    }
+  });
+});
+
+// Interactive Navigation Pills
+document.querySelectorAll('.nav-pill').forEach(pill => {
+  pill.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Remove active class from all pills
+    document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+    
+    // Add active class to clicked pill
+    pill.classList.add('active');
+
+    // Hide all sections
+    document.querySelectorAll('.faq-section').forEach(section => {
+      section.classList.remove('active');
+    });
+
+    // Show target section with animation
+    const targetId = pill.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      setTimeout(() => {
+        targetSection.classList.add('active');
+        targetSection.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start',
+          inline: 'nearest'
+        });
+      }, 100);
+    }
+  });
+});
+
+// Intersection Observer for section visibility
+const observerOptions = {
+  root: null,
+  rootMargin: '-50px 0px -50px 0px',
+  threshold: 0.3
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const sectionId = entry.target.getAttribute('id');
+      
+      // Update active navigation pill
+      document.querySelectorAll('.nav-pill').forEach(pill => {
+        pill.classList.remove('active');
+        if (pill.getAttribute('href') === `#${sectionId}`) {
+          pill.classList.add('active');
+        }
+      });
+    }
+  });
+}, observerOptions);
+
+// Observe all FAQ sections
+document.querySelectorAll('.faq-section').forEach(section => {
+  observer.observe(section);
+});
+
+// Smooth reveal animations on scroll
+const revealElements = document.querySelectorAll('.faq-item, .service-card');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+revealElements.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  revealObserver.observe(el);
+});
+
+// Enhanced service card hover effects with data
+const serviceData = {
+  'spinal': {
+    title: 'Spinal Manipulation',
+    description: 'Over 23 years of expertise in precise spinal adjustments',
+    benefits: ['Pain Relief', 'Improved Mobility', 'Natural Healing']
+  },
+  'soft-tissue': {
+    title: 'Soft-Tissue Therapy',
+    description: 'Advanced IASTM techniques for optimal recovery',
+    benefits: ['Scar Tissue Breakdown', 'Increased Flexibility', 'Faster Healing']
+  },
+  'dry-needling': {
+    title: 'Dry Needling',
+    description: 'Targeted trigger point therapy for muscle tension',
+    benefits: ['Muscle Relaxation', 'Pain Reduction', 'Improved Function']
+  },
+  'cupping': {
+    title: 'Cupping Therapy',
+    description: 'Traditional therapy for circulation and healing',
+    benefits: ['Better Circulation', 'Muscle Recovery', 'Stress Relief']
+  },
+  'posture': {
+    title: 'Posture Analysis',
+    description: 'Comprehensive assessment and correction',
+    benefits: ['Alignment Correction', 'Prevention', 'Improved Function']
+  },
+  'exercise': {
+    title: 'Therapeutic Exercise',
+    description: 'Customized rehabilitation programs',
+    benefits: ['Strength Building', 'Injury Prevention', 'Long-term Health']
+  }
+};
+
+// Add enhanced interactions to service cards
+document.querySelectorAll('.service-card').forEach(card => {
+  const serviceType = card.dataset.service;
+  const data = serviceData[serviceType];
+  
+  if (data) {
+    card.addEventListener('mouseenter', () => {
+      // Could show additional info or animate elements
+      card.style.setProperty('--hover-scale', '1.02');
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--hover-scale', '1');
+    });
+  }
+});
+
+// Initialize page
+document.addEventListener('DOMContentLoaded', () => {
+  // Show first section by default
+  const firstSection = document.querySelector('.faq-section');
+  if (firstSection && !firstSection.classList.contains('active')) {
+    firstSection.classList.add('active');
+  }
+  
+  // Activate first nav pill
+  const firstPill = document.querySelector('.nav-pill');
+  if (firstPill && !firstPill.classList.contains('active')) {
+    firstPill.classList.add('active');
+  }
+});
+</script>
+
+</body>
+</html>

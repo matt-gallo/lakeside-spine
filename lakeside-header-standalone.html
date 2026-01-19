@@ -1,0 +1,561 @@
+<!-- Lakeside Spine Header - Standalone Section -->
+<style>
+/* Lakeside Header Styles */
+.lakeside-header {
+    --primary-600: #2563eb;
+    --gray-700: #334155;
+    --gray-200: #e2e8f0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.lakeside-header * {
+    box-sizing: border-box;
+}
+
+.lakeside-header .urgency-banner {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    text-align: center;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1001;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.lakeside-header .urgency-desktop {
+    display: inline;
+}
+
+.lakeside-header .urgency-mobile {
+    display: none;
+}
+
+.lakeside-header .urgency-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.lakeside-header .urgency-icon {
+    width: 20px;
+    height: 20px;
+    animation: pulse 2s infinite;
+}
+
+.lakeside-header header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 1px 20px rgba(0,0,0,0.05);
+    position: fixed;
+    width: 100%;
+    top: 44px;
+    z-index: 1000;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.lakeside-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .lakeside-header nav {
+        max-width: none;
+        margin: 0;
+        padding: 12px 16px;
+    }
+}
+
+.lakeside-header .logo {
+    height: 45px;
+}
+
+.lakeside-header .logo img {
+    height: 100%;
+    width: auto;
+}
+
+.lakeside-header .header-cta {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.lakeside-header .main-nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    margin-right: 32px;
+}
+
+.lakeside-header .mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.lakeside-header .mobile-menu-toggle:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.lakeside-header .mobile-menu-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--gray-700);
+}
+
+.lakeside-header .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 88px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+    padding: 24px;
+    gap: 24px;
+    flex-direction: column;
+}
+
+.lakeside-header .mobile-nav.active {
+    display: flex;
+}
+
+.lakeside-header .mobile-nav a {
+    color: var(--gray-700);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--gray-200);
+    transition: color 0.2s;
+}
+
+.lakeside-header .mobile-nav a:hover {
+    color: var(--primary-600);
+}
+
+.lakeside-header .mobile-nav a:last-child {
+    border-bottom: none;
+}
+
+.lakeside-header .main-nav a {
+    color: var(--gray-700);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 15px;
+}
+
+.lakeside-header .main-nav a:hover {
+    color: var(--primary-600);
+}
+
+.lakeside-header .phone-number {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gray-700);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.lakeside-header .phone-number:hover {
+    color: var(--primary-600);
+}
+
+.lakeside-header .phone-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.lakeside-header .btn-primary {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 14px 28px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: pulse-glow 2s infinite;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.lakeside-header .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 3s infinite;
+}
+
+.lakeside-header .btn-primary:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    animation: none;
+}
+
+/* Mobile Styles - Flexbox Layout */
+@media (max-width: 768px) {
+    
+    .lakeside-header .logo {
+        height: 36px;
+        flex-shrink: 0;
+    }
+    
+    .lakeside-header .main-nav {
+        display: none;
+    }
+    
+    .lakeside-header .header-cta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 1;
+        justify-content: flex-end;
+        margin-right: 12px;
+    }
+    
+    .lakeside-header .mobile-menu-toggle {
+        display: flex;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        order: 3;
+    }
+    
+    .lakeside-header .phone-number {
+        font-size: 13px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--primary-600);
+        white-space: nowrap;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    
+    .lakeside-header .btn-primary {
+        padding: 10px 16px;
+        font-size: 13px;
+        border-radius: 8px;
+        white-space: nowrap;
+        min-height: 44px;
+    }
+    
+    .lakeside-header .urgency-banner {
+        font-size: 12px;
+        padding: 8px 16px;
+        line-height: 1.3;
+    }
+    
+    .lakeside-header .urgency-desktop {
+        display: none;
+    }
+    
+    .lakeside-header .urgency-mobile {
+        display: inline;
+    }
+    
+    .lakeside-header .urgency-content {
+        flex-wrap: nowrap;
+        text-align: center;
+        gap: 6px;
+    }
+    
+    .lakeside-header .urgency-icon {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .lakeside-header nav {
+        padding: 10px 12px;
+        min-height: 56px;
+    }
+    
+    .lakeside-header .logo {
+        height: 32px;
+    }
+    
+    .lakeside-header .header-cta {
+        gap: 8px;
+    }
+    
+    .lakeside-header .phone-number {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+    
+    .lakeside-header .phone-icon {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .lakeside-header .btn-primary {
+        padding: 8px 12px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+    
+    .lakeside-header .mobile-nav {
+        padding: 16px;
+        top: 68px;
+    }
+    
+    .lakeside-header .urgency-banner {
+        font-size: 11px;
+        padding: 6px 12px;
+        line-height: 1.2;
+    }
+    
+    .lakeside-header .urgency-content {
+        gap: 4px;
+    }
+    
+    .lakeside-header .urgency-icon {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .lakeside-header nav {
+        padding: 8px 10px;
+        min-height: 52px;
+    }
+    
+    .lakeside-header .logo {
+        height: 28px;
+    }
+    
+    .lakeside-header .header-cta {
+        gap: 6px;
+    }
+    
+    .lakeside-header .phone-number {
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+    
+    .lakeside-header .btn-primary {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    .lakeside-header .mobile-nav {
+        top: 64px;
+        padding: 12px;
+    }
+    
+    .lakeside-header .urgency-banner {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { 
+        box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3), 0 0 0 0 rgba(220, 38, 38, 0.4);
+    }
+    50% { 
+        box-shadow: 0 4px 14px rgba(220, 38, 38, 0.5), 0 0 0 8px rgba(220, 38, 38, 0);
+    }
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Add spacing for fixed header */
+.lakeside-header ~ * {
+    margin-top: 120px;
+}
+
+/* Improved touch targets and accessibility */
+@media (max-width: 768px) {
+    .lakeside-header .phone-number,
+    .lakeside-header .btn-primary,
+    .lakeside-header .mobile-menu-toggle {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .lakeside-header .mobile-menu-toggle {
+        min-width: 44px;
+    }
+}
+
+/* Prevent text selection on interactive elements */
+.lakeside-header .mobile-menu-toggle,
+.lakeside-header .btn-primary {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Focus states for accessibility */
+.lakeside-header .phone-number:focus,
+.lakeside-header .btn-primary:focus,
+.lakeside-header .mobile-menu-toggle:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+</style>
+
+<div class="lakeside-header">
+    <!-- Urgency Banner -->
+    <aside class="urgency-banner" role="banner" aria-label="Special offer announcement">
+        <div class="urgency-content">
+            <svg class="urgency-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+<span class="urgency-text">
+                <span class="urgency-desktop">🔥 LIMITED TIME: Complete New Patient Exam + Treatment ONLY $47 (Save $178!) | Book Today</span>
+                <span class="urgency-mobile">🔥 New Patient Special: Exam + Treatment $47 (Save $178!)</span>
+            </span>
+        </div>
+    </aside>
+
+    <!-- Header -->
+    <header role="banner">
+        <nav>
+            <div class="logo">
+                <img src="https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681530adca200064432f760e.png" alt="Lakeside Spine & Injury Center - Dr. Andrew Allen Chiropractor Wheat Ridge CO" width="200" height="45">
+            </div>
+            <nav class="main-nav">
+                <a href="https://lakesidespineandinjury.com/home">Home</a>
+                <a href="https://lakesidespineandinjury.com/faq">FAQ</a>
+                <a href="https://lakesidespineandinjury.com/services">Services</a>
+                <a href="https://lakesidespineandinjury.com/calendar">Calendar</a>
+                <a href="https://lakesidespineandinjury.com/recovery-room">Blog</a>
+            </nav>
+            <div class="header-cta">
+                <a href="tel:303-123-4567" class="phone-number">
+                    <svg class="phone-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    (303) 123-4567
+                </a>
+                <a href="https://lakesidespineandinjury.com/calendar" class="btn-primary">Claim $47 Special</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </button>
+        </nav>
+        
+        <!-- Mobile Navigation Menu -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="https://lakesidespineandinjury.com/home">Home</a>
+            <a href="https://lakesidespineandinjury.com/faq">FAQ</a>
+            <a href="https://lakesidespineandinjury.com/services">Services</a>
+            <a href="https://lakesidespineandinjury.com/calendar">Calendar</a>
+            <a href="https://lakesidespineandinjury.com/recovery-room">Blog</a>
+        </nav>
+    </header>
+</div>
+
+<script>
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.lakeside-header .mobile-menu-toggle');
+    const mobileNav = document.querySelector('.lakeside-header .mobile-nav');
+    
+    if (mobileMenuToggle && mobileNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+            const isExpanded = mobileNav.classList.contains('active');
+            
+            // Toggle mobile nav
+            mobileNav.classList.toggle('active');
+            
+            // Update aria-expanded attribute
+            mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+            
+            // Change hamburger icon to X when open
+            const svg = mobileMenuToggle.querySelector('svg');
+            if (!isExpanded) {
+                // Change to X icon
+                svg.innerHTML = '<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>';
+            } else {
+                // Change back to hamburger icon
+                svg.innerHTML = '<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>';
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileNavLinks = mobileNav.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                
+                // Reset icon to hamburger
+                const svg = mobileMenuToggle.querySelector('svg');
+                svg.innerHTML = '<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>';
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.lakeside-header')) {
+                mobileNav.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                
+                // Reset icon to hamburger
+                const svg = mobileMenuToggle.querySelector('svg');
+                svg.innerHTML = '<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>';
+            }
+        });
+    }
+});
+</script>

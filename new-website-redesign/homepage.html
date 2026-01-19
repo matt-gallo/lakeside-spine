@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakeside Spine & Injury - Dr. Andrew Allen, Chiropractor in Wheat Ridge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header/Navigation */
+        .top-banner {
+            background: #1e293b;
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .top-banner a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #334155;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1e293b;
+        }
+
+        .nav-cta {
+            background: #fbbf24;
+            color: #1e293b;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(51, 65, 85, 0.75) 100%),
+                        url('https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/68152f8a00131974a20400b8.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .btn-primary {
+            background: #fbbf24;
+            color: #1e293b;
+            padding: 18px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #f59e0b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1e293b;
+            padding: 18px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #f1f5f9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            text-align: center;
+        }
+
+        .badge-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fbbf24;
+        }
+
+        .badge-text {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            background: #f8fafc;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #64748b;
+            margin-bottom: 50px;
+        }
+
+        .stars {
+            font-size: 32px;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .review-summary {
+            font-size: 24px;
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 50px;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .testimonial-stars {
+            color: #fbbf24;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        /* Why Different Section */
+        .why-different {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* Conditions Section */
+        .conditions {
+            background: #f8fafc;
+            padding: 80px 0;
+        }
+
+        .condition-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .condition-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .condition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .condition-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(51, 65, 85, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .condition-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(51, 65, 85, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .condition-image svg,
+        .condition-image img {
+            position: relative;
+            z-index: 2;
+        }
+
+        .condition-content {
+            padding: 25px;
+        }
+
+        .condition-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .condition-description {
+            font-size: 15px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Meet Dr. Allen Section */
+        .meet-doctor {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .doctor-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .doctor-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        .doctor-text h3 {
+            font-size: 28px;
+            color: #1e293b;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .doctor-text p {
+            font-size: 17px;
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .credentials {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .credential {
+            background: #fef3c7;
+            color: #1e293b;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: #1e293b;
+            color: white;
+            padding: 80px 0;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #fbbf24;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+            color: #1e293b;
+        }
+
+        .step-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .step-description {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .faq-items {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 25px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 25px 25px;
+            color: #475569;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 24px;
+            color: #fbbf24;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: #1e293b;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            margin-top: 30px;
+        }
+
+        .contact-info a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #fbbf24;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .footer-section a:hover {
+            color: #fbbf24;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #cbd5e1;
+        }
+
+        /* Icon Styles */
+        .icon {
+            width: 48px;
+            height: 48px;
+            display: inline-block;
+            margin: 0 auto 20px;
+        }
+
+        .icon-small {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        .icon-condition {
+            width: 80px;
+            height: 80px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .doctor-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .steps,
+            .features,
+            .condition-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner" style="cursor: pointer;" onclick="document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });">
+        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/></svg>
+        Limited Time: Complete Initial Patient Exam + Treatment $0 (Usually $47) | Click to Book Today
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681530adca200064432f760e.png" alt="Lakeside Spine & Injury">
+                </div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="https://lakesidespineandinjury.com/services">Services</a>
+                    <a href="#testimonials">Reviews</a>
+                    <a href="https://lakesidespineandinjury.com/faq">FAQ</a>
+                    <a href="https://lakesidespineandinjury.com/recovery-room">Blog</a>
+                    <a href="#booking">Calendar</a>
+                    <a href="tel:303-351-0744" class="nav-cta">
+                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        (303) 351-0744
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Life Without Pain Starts Here</h1>
+            <p>Start your free 30-min evaluation with Wheat Ridge's top chiropractor. Personalized care that gets through insurance red tape—so you can get to living pain-free.</p>
+
+            <div class="hero-ctas">
+                <a href="#book" class="btn-primary">Start Your Healing Journey</a>
+                <a href="tel:303-351-0744" class="btn-secondary">
+                    <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                    Call (303) 351-0744
+                </a>
+            </div>
+
+            <div class="trust-badges">
+                <div class="badge">
+                    <div class="badge-number">10+</div>
+                    <div class="badge-text">Years Experience</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-number">500+</div>
+                    <div class="badge-text">People Helped</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-number">5.0★</div>
+                    <div class="badge-text">Average Rating</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-number">Same Day</div>
+                    <div class="badge-text">Appointments</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Patients Say</h2>
+            <p class="section-subtitle">Real stories from real people getting real results</p>
+
+            <!-- Elfsight Google Reviews | lakeside google reviews -->
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div class="elfsight-app-1d2418d3-e9d7-4056-b565-f9403bd1dc6a" data-elfsight-app-lazy></div>
+        </div>
+    </section>
+
+    <!-- Why Different Section -->
+    <section class="why-different" id="about">
+        <div class="container">
+            <h2 class="section-title">Why Lakeside is Different</h2>
+            <p class="section-subtitle">We cut through the insurance bureaucracy so you can focus on healing</p>
+
+            <div class="features">
+                <div class="feature">
+                    <svg class="icon" fill="none" stroke="#fbbf24" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <h3 class="feature-title">No Insurance Headaches</h3>
+                    <p class="feature-description">Transparent pricing. No surprise bills. Invest in your health without relying on insurance approval.</p>
+                </div>
+
+                <div class="feature">
+                    <svg class="icon" fill="none" stroke="#fbbf24" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <h3 class="feature-title">30-Minute Evaluations</h3>
+                    <p class="feature-description">We reserve a full 30 minutes for your evaluation, symptom review, and goal conversation—not a rushed 5-minute visit.</p>
+                </div>
+
+                <div class="feature">
+                    <svg class="icon" fill="none" stroke="#fbbf24" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <h3 class="feature-title">Personalized Treatment</h3>
+                    <p class="feature-description">Your care plan is designed specifically for YOU—not a cookie-cutter approach. Real solutions for real people.</p>
+                </div>
+
+                <div class="feature">
+                    <svg class="icon" fill="none" stroke="#fbbf24" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    <h3 class="feature-title">Honest, No-Pressure Care</h3>
+                    <p class="feature-description">We want you to feel heard, understood, and helped—not sold. If we can't help, we'll tell you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conditions Section -->
+    <section class="conditions" id="services">
+        <div class="container">
+            <h2 class="section-title">Conditions We Treat</h2>
+            <p class="section-subtitle">Expert care for the pain that's holding you back</p>
+
+            <div class="condition-cards">
+                <div class="condition-card">
+                    <div class="condition-image" style="background-image: url('https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/6812a5de802ce55ca81f2d13.jpeg');">
+                        <svg class="icon-condition" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    </div>
+                    <div class="condition-content">
+                        <h3 class="condition-title">Back Pain</h3>
+                        <p class="condition-description">From chronic lower back pain to acute injuries, we deliver targeted relief that addresses the root cause.</p>
+                    </div>
+                </div>
+
+                <div class="condition-card">
+                    <div class="condition-image" style="background-image: url('https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681d355cb78a406c6326f365.jpeg');">
+                        <svg class="icon-condition" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+                    </div>
+                    <div class="condition-content">
+                        <h3 class="condition-title">Neck Pain</h3>
+                        <p class="condition-description">Stiffness, tension, or injury—get your neck mobility back without surgery or endless medications.</p>
+                    </div>
+                </div>
+
+                <div class="condition-card">
+                    <div class="condition-image" style="background-image: url('https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681d355cb78a406c6326f365.jpeg');">
+                        <svg class="icon-condition" fill="white" viewBox="0 0 24 24"><path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z"/></svg>
+                    </div>
+                    <div class="condition-content">
+                        <h3 class="condition-title">Headaches & Migraines</h3>
+                        <p class="condition-description">Stop living in fear of the next headache. Our treatments target the source for lasting relief.</p>
+                    </div>
+                </div>
+
+                <div class="condition-card">
+                    <div class="condition-image" style="background-image: url('https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/6812a5debd766c93d3e55b58.jpeg');">
+                        <svg class="icon-condition" fill="white" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+                    </div>
+                    <div class="condition-content">
+                        <h3 class="condition-title">Auto Injuries</h3>
+                        <p class="condition-description">Whiplash and car accident injuries need specialized care. We'll get you back to normal, fast.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Dr. Allen -->
+    <section class="meet-doctor">
+        <div class="container">
+            <h2 class="section-title">Meet Dr. Andrew Allen</h2>
+            <p class="section-subtitle">Your partner in pain-free living</p>
+
+            <div class="doctor-content">
+                <div>
+                    <img src="https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681d36a2b78a40295d26f469.jpeg" alt="Dr. Andrew Allen, DC" class="doctor-image">
+                </div>
+                <div class="doctor-text">
+                    <h3>Hi, I'm Dr. Andrew Allen, DC</h3>
+                    <p>I became a chiropractor because I watched my own family struggle with chronic pain and get trapped in the endless cycle of insurance denials, cookie-cutter treatments, and pain that never truly went away.</p>
+
+                    <p>I started this practice in Wheat Ridge to do things differently. Here, you're not a number or a claim—you're a person with unique pain, unique goals, and a life waiting for you on the other side of healing.</p>
+
+                    <p>I work with fewer clients so I can give each person my full attention, honest advice, and a personalized plan that actually works. Whether you're dealing with back pain, headaches, an old injury, or just want to feel better—I'm here to help you make sense of it all.</p>
+
+                    <div class="credentials">
+                        <span class="credential">Doctor of Chiropractic</span>
+                        <span class="credential">10+ Years Experience</span>
+                        <span class="credential">500+ Patients Helped</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">How It Works</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Getting started is simple—just three steps to a pain-free life</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Book Your Free Evaluation</h3>
+                    <p class="step-description">Schedule online or by phone in under 30 seconds. No referral needed. Same-day and next-day appointments available.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Get Evaluated (30 Minutes)</h3>
+                    <p class="step-description">We'll do a full assessment, review your symptoms, discuss your goals, and create a customized treatment plan just for you.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Start Your Healing Journey</h3>
+                    <p class="step-description">Begin treatment immediately with a personalized care plan designed to get you results—not keep you coming back forever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Get answers to common questions about chiropractic care</p>
+
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What conditions can chiropractic care help with?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Chiropractic care is highly effective for back pain, neck pain, headaches, migraines, sciatica, sports injuries, auto accident injuries, joint pain, and many musculoskeletal conditions. We focus on treating the root cause, not just masking symptoms.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is chiropractic care safe, and are the adjustments painful?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, chiropractic care is extremely safe when performed by a licensed professional. Most adjustments are not painful—many patients describe immediate relief and improved mobility. We tailor every adjustment to your comfort level and health needs.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How many chiropractic sessions will I need to see results?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Every patient is different. Some experience relief after 1-2 sessions, while others with chronic conditions may need ongoing care. During your evaluation, we'll give you a clear, honest timeline based on your specific condition—no guesswork or endless appointments.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you accept insurance?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We operate outside the insurance system to provide you with transparent pricing and avoid the bureaucratic delays. This allows us to focus 100% on your care, not dealing with insurance companies. We offer affordable cash rates and flexible payment options.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What should I expect during my first visit?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Your first visit includes a comprehensive 30-minute evaluation where we'll review your health history, discuss your symptoms and goals, perform a physical assessment, and create a personalized treatment plan. If appropriate, we may begin treatment during your first visit.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="book">
+        <div class="container">
+            <h2>Ready to Live Pain-Free?</h2>
+            <p>Take the first step toward a healthier, more active life. Your free evaluation is just one click away.</p>
+
+            <div class="cta-buttons">
+                <a href="#" class="btn-primary">Book Your Free Evaluation</a>
+                <a href="tel:303-351-0744" class="btn-secondary">
+                    <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                    Call (303) 351-0744
+                </a>
+            </div>
+
+            <div class="contact-info">
+                <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                Office: 6073 W 44th Ave #101, Wheat Ridge, Colorado 80033<br>
+                <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                Email: <a href="mailto:info@lakesidespineandinjury.com">info@lakesidespineandinjury.com</a><br>
+                <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+                Same-day and next-day appointments available
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Maps Section -->
+    <section style="background: white; padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Visit the Clinic</h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 40px;">Conveniently located in Wheat Ridge, Colorado</p>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3066.3370872031664!2d-105.066331623551!3d39.77698997154966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b876551c1f4ed%3A0xd2c0b53c6e20e6c!2sLakeside%20Spine%20and%20Injury%20Center!5e0!3m2!1sen!2sus!4v1767804304534!5m2!1sen!2sus"
+                    width="100%"
+                    height="400"
+                    style="border:0; border-radius:12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <p style="text-align: center; margin-top: 30px; font-size: 16px; color: #64748b;">
+                Serving Wheat Ridge, Arvada, Denver, Golden, Lakewood, and surrounding areas.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lakeside Spine & Injury</h3>
+                    <p>Personalized chiropractic care in Wheat Ridge, Colorado. No insurance headaches, just real results.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#about">About Dr. Allen</a>
+                    <a href="#services">Services</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>
+                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        (303) 351-0744
+                    </p>
+                    <p>
+                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                        info@lakesidespineandinjury.com
+                    </p>
+                    <p>
+                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                        6073 W 44th Ave #101<br>Wheat Ridge, CO 80033
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p>Saturday: By Appointment</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; 2025 Lakeside Spine & Injury. All rights reserved. | <a href="#" style="color: #fbbf24;">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple FAQ Toggle Script -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-toggle').textContent = '+';
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    question.querySelector('.faq-toggle').textContent = '−';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
