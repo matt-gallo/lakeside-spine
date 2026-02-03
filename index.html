@@ -4,12 +4,649 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lakeside Spine & Injury - Dr. Andrew Allen, Chiropractor in Wheat Ridge</title>
-    <meta name="description" content="Life Without Pain Starts Here. Expert chiropractic care in Wheat Ridge, CO. Free 30-min evaluations, same-day appointments, personalized treatment plans.">
-    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header/Navigation */
+        .top-banner {
+            background: #1e293b;
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .top-banner a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #334155;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1e293b;
+        }
+
+        .nav-cta {
+            background: #fbbf24;
+            color: #1e293b;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(51, 65, 85, 0.75) 100%),
+                        url('https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/68152f8a00131974a20400b8.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .btn-primary {
+            background: #fbbf24;
+            color: #1e293b;
+            padding: 18px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #f59e0b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1e293b;
+            padding: 18px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #f1f5f9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            text-align: center;
+        }
+
+        .badge-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fbbf24;
+        }
+
+        .badge-text {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            background: #f8fafc;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #64748b;
+            margin-bottom: 50px;
+        }
+
+        .stars {
+            font-size: 32px;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .review-summary {
+            font-size: 24px;
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 50px;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .testimonial-stars {
+            color: #fbbf24;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        /* Why Different Section */
+        .why-different {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* Conditions Section */
+        .conditions {
+            background: #f8fafc;
+            padding: 80px 0;
+        }
+
+        .condition-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .condition-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .condition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .condition-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(51, 65, 85, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .condition-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(51, 65, 85, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .condition-image svg,
+        .condition-image img {
+            position: relative;
+            z-index: 2;
+        }
+
+        .condition-content {
+            padding: 25px;
+        }
+
+        .condition-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .condition-description {
+            font-size: 15px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Meet Dr. Allen Section */
+        .meet-doctor {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .doctor-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .doctor-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        .doctor-text h3 {
+            font-size: 28px;
+            color: #1e293b;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .doctor-text p {
+            font-size: 17px;
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .credentials {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .credential {
+            background: #fef3c7;
+            color: #1e293b;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: #1e293b;
+            color: white;
+            padding: 80px 0;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #fbbf24;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+            color: #1e293b;
+        }
+
+        .step-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .step-description {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .faq-items {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 25px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 25px 25px;
+            color: #475569;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 24px;
+            color: #fbbf24;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: #1e293b;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            margin-top: 30px;
+        }
+
+        .contact-info a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #fbbf24;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .footer-section a:hover {
+            color: #fbbf24;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #cbd5e1;
+        }
+
+        /* Icon Styles */
+        .icon {
+            width: 48px;
+            height: 48px;
+            display: inline-block;
+            margin: 0 auto 20px;
+        }
+
+        .icon-small {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        .icon-condition {
+            width: 80px;
+            height: 80px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .doctor-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .steps,
+            .features,
+            .condition-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Top Banner -->
-    <div class="top-banner" style="cursor: pointer;" onclick="window.location.href='booking.html'">
+    <div class="top-banner" style="cursor: pointer;" onclick="document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });">
         <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/></svg>
         Limited Time: Complete Initial Patient Exam + Treatment $0 (Usually $47) | Click to Book Today
     </div>
@@ -19,17 +656,15 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo">
-                    <a href="index.html">
-                        <img src="https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681530adca200064432f760e.png" alt="Lakeside Spine & Injury">
-                    </a>
+                    <img src="https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681530adca200064432f760e.png" alt="Lakeside Spine & Injury">
                 </div>
                 <div class="nav-links">
                     <a href="#about">About</a>
-                    <a href="services.html">Services</a>
+                    <a href="https://lakesidespineandinjury.com/services">Services</a>
                     <a href="#testimonials">Reviews</a>
-                    <a href="faq.html">FAQ</a>
-                    <a href="recovery-room.html">Blog</a>
-                    <a href="booking.html">Calendar</a>
+                    <a href="https://lakesidespineandinjury.com/faq">FAQ</a>
+                    <a href="https://lakesidespineandinjury.com/recovery-room">Blog</a>
+                    <a href="#booking">Calendar</a>
                     <a href="tel:303-351-0744" class="nav-cta">
                         <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
                         (303) 351-0744
@@ -46,7 +681,7 @@
             <p>Start your free 30-min evaluation with Wheat Ridge's top chiropractor. Personalized care that gets through insurance red tape—so you can get to living pain-free.</p>
 
             <div class="hero-ctas">
-                <a href="booking.html" class="btn-primary">Start Your Healing Journey</a>
+                <a href="#book" class="btn-primary">Start Your Healing Journey</a>
                 <a href="tel:303-351-0744" class="btn-secondary">
                     <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
                     Call (303) 351-0744
@@ -293,7 +928,7 @@
             <p>Take the first step toward a healthier, more active life. Your free evaluation is just one click away.</p>
 
             <div class="cta-buttons">
-                <a href="booking.html" class="btn-primary">Book Your Free Evaluation</a>
+                <a href="#" class="btn-primary">Book Your Free Evaluation</a>
                 <a href="tel:303-351-0744" class="btn-secondary">
                     <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
                     Call (303) 351-0744
@@ -312,7 +947,7 @@
     </section>
 
     <!-- Google Maps Section -->
-    <section style="background: white; padding: 80px 0;">
+    <section id="booking" style="background: white; padding: 80px 0;">
         <div class="container">
             <h2 class="section-title" style="text-align: center;">Visit the Clinic</h2>
             <p class="section-subtitle" style="text-align: center; margin-bottom: 40px;">Conveniently located in Wheat Ridge, Colorado</p>
@@ -347,10 +982,9 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <a href="#about">About Dr. Allen</a>
-                    <a href="services.html">Services</a>
+                    <a href="#services">Services</a>
                     <a href="#testimonials">Testimonials</a>
-                    <a href="faq.html">FAQ</a>
-                    <a href="recovery-room.html">Blog</a>
+                    <a href="#faq">FAQ</a>
                 </div>
 
                 <div class="footer-section">
@@ -378,11 +1012,31 @@
             </div>
 
             <div class="footer-bottom">
-                &copy; 2025 Lakeside Spine & Injury. All rights reserved. | <a href="privacy.html" style="color: #fbbf24;">Privacy Policy</a>
+                &copy; 2025 Lakeside Spine & Injury. All rights reserved. | <a href="#" style="color: #fbbf24;">Privacy Policy</a>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- Simple FAQ Toggle Script -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-toggle').textContent = '+';
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    question.querySelector('.faq-toggle').textContent = '−';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

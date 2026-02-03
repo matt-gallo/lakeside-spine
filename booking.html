@@ -3,230 +3,617 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Appointment - Lakeside Spine & Injury</title>
-    <meta name="description" content="Book your free 30-minute chiropractic evaluation with Dr. Andrew Allen in Wheat Ridge, CO. Same-day appointments available.">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Book Appointment - Lakeside Spine & Injury | $47 New Patient Special</title>
+    <meta name="description" content="Book your $47 new patient special with Dr. Andrew Allen in Wheat Ridge, CO. Same-day appointments available.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Lakeside Header Styles */
+        .lakeside-header {
+            --primary-600: #fbbf24;
+            --gray-700: #1e293b;
+            --gray-200: #e2e8f0;
+        }
+
+        .lakeside-header * {
+            box-sizing: border-box;
+        }
+
+        /* Banner - Desktop Only */
+        .lakeside-header .urgency-banner {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1001;
+            display: none;
+        }
+
+        .lakeside-header .urgency-banner a {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            padding: 12px 24px;
+        }
+
+        .lakeside-header .urgency-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        /* Main Header */
+        .lakeside-header header {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .lakeside-header .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            gap: 12px;
+        }
+
+        .lakeside-header .logo {
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .lakeside-header .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+            max-width: 100%;
+        }
+
+        /* Desktop Nav */
+        .lakeside-header .desktop-nav {
+            display: none;
+        }
+
+        .lakeside-header .desktop-cta {
+            display: none;
+        }
+
+        /* Mobile Toggle */
+        .lakeside-header .menu-btn {
+            background: var(--gray-700);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            padding: 0;
+            margin-right: 4px;
+            flex-shrink: 0;
+        }
+
+        .lakeside-header .menu-btn span {
+            width: 20px;
+            height: 2px;
+            background: white;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        .lakeside-header .menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .lakeside-header .menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .lakeside-header .menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Menu */
+        .lakeside-header .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: white;
+            border-bottom: 1px solid var(--gray-200);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 999;
+            padding: 16px;
+        }
+
+        .lakeside-header .mobile-menu.show {
+            display: block;
+        }
+
+        .lakeside-header .mobile-menu nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-bottom: 16px;
+        }
+
+        .lakeside-header .mobile-menu nav a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 17px;
+            padding: 14px 12px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .lakeside-header .mobile-cta-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 20px 12px;
+            background: linear-gradient(to bottom, #f9fafb, white);
+            border-top: 2px solid var(--gray-200);
+        }
+
+        .lakeside-header .mobile-cta-btn {
+            display: block;
+            text-align: center;
+            padding: 20px 24px;
+            background: #fbbf24;
+            color: #1e293b;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 6px 16px rgba(251, 191, 36, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: pulse-glow 2s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lakeside-header .mobile-cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 6px 16px rgba(251, 191, 36, 0.4), 0 0 0 0 rgba(251, 191, 36, 0.4);
+            }
+            50% {
+                box-shadow: 0 6px 20px rgba(251, 191, 36, 0.6), 0 0 0 8px rgba(251, 191, 36, 0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .lakeside-header .mobile-phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 20px;
+            background: white;
+            border: 2px solid var(--primary-600);
+            border-radius: 12px;
+            color: var(--primary-600);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .lakeside-header .mobile-phone svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Page spacing */
+        .lakeside-header ~ * {
+            margin-top: 70px;
+        }
+
+        /* Desktop */
+        @media (min-width: 769px) {
+            .lakeside-header .urgency-banner {
+                display: block;
+            }
+
+            .lakeside-header header {
+                top: 44px;
+            }
+
+            .lakeside-header .nav-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 16px 24px;
+            }
+
+            .lakeside-header .logo img {
+                height: 50px;
+            }
+
+            .lakeside-header .menu-btn {
+                display: none;
+            }
+
+            .lakeside-header .mobile-menu {
+                display: none !important;
+            }
+
+            .lakeside-header .desktop-nav {
+                display: flex;
+                gap: 32px;
+                align-items: center;
+                margin: 0 auto 0 32px;
+            }
+
+            .lakeside-header .desktop-nav a {
+                color: var(--gray-700);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 15px;
+                transition: color 0.2s;
+            }
+
+            .lakeside-header .desktop-nav a:hover {
+                color: var(--primary-600);
+            }
+
+            .lakeside-header .desktop-cta {
+                display: flex;
+                gap: 16px;
+                align-items: center;
+            }
+
+            .lakeside-header .desktop-phone {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: var(--gray-700);
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 18px;
+                transition: color 0.2s;
+            }
+
+            .lakeside-header .desktop-phone:hover {
+                color: var(--primary-600);
+            }
+
+            .lakeside-header .desktop-phone svg {
+                width: 20px;
+                height: 20px;
+                fill: currentColor;
+            }
+
+            .lakeside-header .desktop-cta-btn {
+                padding: 14px 28px;
+                background: #fbbf24;
+                color: #1e293b;
+                text-decoration: none;
+                border-radius: 12px;
+                font-weight: 600;
+                font-size: 15px;
+                box-shadow: 0 4px 14px rgba(251, 191, 36, 0.3);
+                transition: all 0.2s;
+                white-space: nowrap;
+            }
+
+            .lakeside-header .desktop-cta-btn:hover {
+                background: #f59e0b;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+            }
+
+            .lakeside-header ~ * {
+                margin-top: 120px;
+            }
+        }
+
+        /* Booking Hero */
+        .booking-hero {
+            width: 100%;
+            background: #1e293b;
+            color: #fff;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .booking-hero__inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .booking-hero__title {
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .booking-hero__subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        @media(max-width: 600px) {
+            .booking-hero__title {
+                font-size: 2rem;
+            }
+            .booking-hero__subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        /* Calendar Section */
+        .calendar-section {
+            padding: 80px 20px;
+            background: white;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .calendar-container {
+            background: #f8fafc;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            padding: 80px 20px;
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        .reviews-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .reviews-section p {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #fbbf24;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .footer-section a:hover {
+            color: #fbbf24;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #cbd5e1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .icon-small {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Top Banner -->
-    <div class="top-banner">
-        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/></svg>
-        Limited Time: Complete Initial Patient Exam + Treatment $0 (Usually $47)
+    <!-- Lakeside Header -->
+    <div class="lakeside-header">
+        <!-- Banner - Desktop Only -->
+        <aside class="urgency-banner">
+            <a href="#booking">
+                <div class="urgency-content">
+                    <span>🔥 LIMITED TIME: Complete New Patient Exam + Treatment ONLY $47 (Save $178!) | Book Today</span>
+                </div>
+            </a>
+        </aside>
+
+        <!-- Header -->
+        <header>
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <img src="https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681530adca200064432f760e.png" alt="Lakeside Spine and Injury Center" width="200" height="40">
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="desktop-nav">
+                    <a href="index.html">Home</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="services.html">Services</a>
+                    <a href="booking.html">Calendar</a>
+                    <a href="recovery-room.html">Blog</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="desktop-cta">
+                    <a href="tel:303-351-0744" class="desktop-phone">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        303-351-0744
+                    </a>
+                    <a href="#booking" class="desktop-cta-btn">Claim $47 Special</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="menu-btn" onclick="this.classList.toggle('active'); document.getElementById('lakeside-mobile-menu').classList.toggle('show')">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="lakeside-mobile-menu">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="faq.html">FAQ</a>
+                <a href="services.html">Services</a>
+                <a href="booking.html">Calendar</a>
+                <a href="recovery-room.html">Blog</a>
+            </nav>
+
+            <div class="mobile-cta-section">
+                <a href="#booking" class="mobile-cta-btn">Claim $47 New Patient Special</a>
+                <a href="tel:303-351-0744" class="mobile-phone">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    303-351-0744
+                </a>
+            </div>
+        </div>
     </div>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681530adca200064432f760e.png" alt="Lakeside Spine & Injury">
-                    </a>
-                </div>
-                <div class="nav-links">
-                    <a href="index.html#about">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="index.html#testimonials">Reviews</a>
-                    <a href="faq.html">FAQ</a>
-                    <a href="recovery-room.html">Blog</a>
-                    <a href="booking.html">Calendar</a>
-                    <a href="tel:303-351-0744" class="nav-cta">
-                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                        (303) 351-0744
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Book Your Free Evaluation</h1>
-            <p>Take the first step toward a pain-free life. Schedule your appointment today.</p>
-        </div>
-    </section>
-
-    <!-- Booking Section -->
-    <section class="content-section">
-        <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <h2 class="section-title" style="text-align: center;">Choose Your Appointment Time</h2>
-                <p class="section-subtitle" style="text-align: center; margin-bottom: 50px;">
-                    Same-day and next-day appointments available. Your initial 30-minute evaluation is completely free.
+    <!-- Booking Hero -->
+    <section class="booking-hero">
+        <div class="booking-hero__inner">
+            <div class="booking-hero__copy">
+                <h1 class="booking-hero__title">Book Your $47 New Patient Special</h1>
+                <p class="booking-hero__subtitle">
+                    Claim your 30‑minute session with Dr. Allen—no insurance needed.
+                    Get a clear diagnosis, first adjustment if appropriate, and a plan to start feeling better today.
                 </p>
-
-                <!-- Booking Calendar Embed -->
-                <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center; min-height: 600px;">
-                    <!-- Replace this with your actual booking calendar embed code -->
-                    <div style="margin-bottom: 30px;">
-                        <svg style="width: 80px; height: 80px; margin: 0 auto; display: block; margin-bottom: 20px;" fill="none" stroke="#fbbf24" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                        </svg>
-                        <h3 style="font-size: 24px; color: #1e293b; margin-bottom: 15px;">Online Booking Coming Soon</h3>
-                        <p style="font-size: 18px; color: #64748b; margin-bottom: 30px;">
-                            In the meantime, please call us to schedule your appointment
-                        </p>
-                    </div>
-
-                    <a href="tel:303-351-0744" class="btn-primary" style="font-size: 20px; padding: 20px 40px;">
-                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                        Call (303) 351-0744 to Book
-                    </a>
-
-                    <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid #e2e8f0;">
-                        <p style="font-size: 16px; color: #64748b; margin-bottom: 20px;">
-                            <strong>Office Hours:</strong><br>
-                            Monday - Friday: 9:00 AM - 6:00 PM<br>
-                            Saturday: By Appointment<br>
-                            Sunday: Closed
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Booking Instructions -->
-                <div style="margin-top: 50px;">
-                    <h3 style="font-size: 28px; color: #1e293b; text-align: center; margin-bottom: 30px;">What to Expect</h3>
-
-                    <div class="features">
-                        <div class="feature">
-                            <div class="step-number" style="margin: 0 auto 20px;">1</div>
-                            <h3 class="feature-title">Call or Book Online</h3>
-                            <p class="feature-description">Schedule your free 30-minute evaluation at a time that works for you. Same-day appointments often available.</p>
-                        </div>
-
-                        <div class="feature">
-                            <div class="step-number" style="margin: 0 auto 20px;">2</div>
-                            <h3 class="feature-title">Complete Your Evaluation</h3>
-                            <p class="feature-description">We'll review your health history, assess your condition, and create a personalized treatment plan.</p>
-                        </div>
-
-                        <div class="feature">
-                            <div class="step-number" style="margin: 0 auto 20px;">3</div>
-                            <h3 class="feature-title">Begin Treatment</h3>
-                            <p class="feature-description">Start your healing journey with treatments designed specifically for your needs and goals.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- What to Bring -->
-    <section class="content-section alt">
-        <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h2 class="section-title" style="text-align: center;">What to Bring to Your First Appointment</h2>
-                <p class="section-subtitle" style="text-align: center;">Being prepared helps us provide you with the best care possible</p>
-
-                <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-top: 40px;">
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 15px 0; padding-left: 40px; position: relative; font-size: 17px; color: #475569; border-bottom: 1px solid #f1f5f9;">
-                            <span style="position: absolute; left: 0; color: #fbbf24; font-weight: 700;">✓</span>
-                            Valid photo ID
-                        </li>
-                        <li style="padding: 15px 0; padding-left: 40px; position: relative; font-size: 17px; color: #475569; border-bottom: 1px solid #f1f5f9;">
-                            <span style="position: absolute; left: 0; color: #fbbf24; font-weight: 700;">✓</span>
-                            List of current medications (if applicable)
-                        </li>
-                        <li style="padding: 15px 0; padding-left: 40px; position: relative; font-size: 17px; color: #475569; border-bottom: 1px solid #f1f5f9;">
-                            <span style="position: absolute; left: 0; color: #fbbf24; font-weight: 700;">✓</span>
-                            Any relevant medical records or imaging results (X-rays, MRIs, etc.)
-                        </li>
-                        <li style="padding: 15px 0; padding-left: 40px; position: relative; font-size: 17px; color: #475569; border-bottom: 1px solid #f1f5f9;">
-                            <span style="position: absolute; left: 0; color: #fbbf24; font-weight: 700;">✓</span>
-                            Comfortable, loose-fitting clothing
-                        </li>
-                        <li style="padding: 15px 0; padding-left: 40px; position: relative; font-size: 17px; color: #475569;">
-                            <span style="position: absolute; left: 0; color: #fbbf24; font-weight: 700;">✓</span>
-                            Questions or concerns about your condition
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Calendar Section -->
+    <section class="calendar-section" id="booking">
+        <div class="calendar-container">
+            <iframe src="https://api.leadconnectorhq.com/widget/booking/qM3VFHkmLpHDgowLVqU8" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="G5AX7MJKuh61z8L9v3YF_1765316416731"></iframe>
+            <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
         </div>
     </section>
 
-    <!-- Location Info -->
-    <section class="content-section">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center;">Visit Us</h2>
-            <p class="section-subtitle" style="text-align: center; margin-bottom: 40px;">Conveniently located in Wheat Ridge, Colorado</p>
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <h2>Hear from Our Patients</h2>
+        <p>Real stories from real people getting real results</p>
 
-            <div style="max-width: 900px; margin: 0 auto;">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3066.3370872031664!2d-105.066331623551!3d39.77698997154966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b876551c1f4ed%3A0xd2c0b53c6e20e6c!2sLakeside%20Spine%20and%20Injury%20Center!5e0!3m2!1sen!2sus!4v1767804304534!5m2!1sen!2sus"
-                    width="100%"
-                    height="400"
-                    style="border:0; border-radius:12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-
-                <div style="margin-top: 30px; text-align: center;">
-                    <p style="font-size: 18px; color: #334155; margin-bottom: 10px;">
-                        <strong>Lakeside Spine & Injury</strong><br>
-                        6073 W 44th Ave #101<br>
-                        Wheat Ridge, CO 80033
-                    </p>
-                    <p style="font-size: 16px; color: #64748b; margin-top: 20px;">
-                        Free parking available on-site<br>
-                        Serving Wheat Ridge, Arvada, Denver, Golden, Lakewood, and surrounding areas
-                    </p>
-                </div>
-            </div>
-        </div>
+        <!-- Elfsight Google Reviews -->
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+        <div class="elfsight-app-1d2418d3-e9d7-4056-b565-f9403bd1dc6a" data-elfsight-app-lazy></div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Lakeside Spine & Injury</h3>
-                    <p>Personalized chiropractic care in Wheat Ridge, Colorado. No insurance headaches, just real results.</p>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <a href="index.html#about">About Dr. Allen</a>
-                    <a href="services.html">Services</a>
-                    <a href="index.html#testimonials">Testimonials</a>
-                    <a href="faq.html">FAQ</a>
-                    <a href="recovery-room.html">Blog</a>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>
-                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                        (303) 351-0744
-                    </p>
-                    <p>
-                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
-                        drallen@lakesidespineandinjury.com
-                    </p>
-                    <p>
-                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
-                        6073 W 44th Ave #101<br>Wheat Ridge, CO 80033
-                    </p>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Office Hours</h3>
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p>Saturday: By Appointment</p>
-                    <p>Sunday: Closed</p>
-                </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Lakeside Spine & Injury</h3>
+                <p>Personalized chiropractic care in Wheat Ridge, Colorado. No insurance headaches, just real results.</p>
             </div>
 
-            <div class="footer-bottom">
-                &copy; 2025 Lakeside Spine & Injury. All rights reserved. | <a href="privacy.html" style="color: #fbbf24;">Privacy Policy</a>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="faq.html">FAQ</a>
+                <a href="recovery-room.html">Blog</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>
+                    <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                    (303) 351-0744
+                </p>
+                <p>
+                    <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                    info@lakesidespineandinjury.com
+                </p>
+                <p>
+                    <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                    6073 W 44th Ave #101<br>Wheat Ridge, CO 80033
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Office Hours</h3>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p>Saturday: By Appointment</p>
+                <p>Sunday: Closed</p>
             </div>
         </div>
-    </footer>
 
-    <script src="js/main.js"></script>
+        <div class="footer-bottom">
+            &copy; 2025 Lakeside Spine & Injury. All rights reserved. | <a href="#" style="color: #fbbf24;">Privacy Policy</a>
+        </div>
+    </footer>
 </body>
 </html>

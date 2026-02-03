@@ -3,199 +3,1021 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Lakeside Spine & Injury | Chiropractic Questions Answered</title>
-    <meta name="description" content="Get answers to common questions about chiropractic care, back pain treatment, auto accident injuries, and more at Lakeside Spine & Injury Center in Wheat Ridge, CO.">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>FAQ - Lakeside Spine & Injury | Common Chiropractic Questions</title>
+    <meta name="description" content="Get answers to your chiropractic questions. Learn about treatment, costs, conditions we treat, and what to expect at Lakeside Spine & Injury in Wheat Ridge, CO.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: #ffffff;
+        }
+
+        /* Top Banner */
+        .urgency-banner {
+            background: #dc2626;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-weight: 600;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .urgency-banner:hover {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+
+        .urgency-banner svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Header */
+        .lakeside-header {
+            background: #1e293b;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: block;
+            line-height: 0;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+        }
+
+        .desktop-nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 16px;
+        }
+
+        .nav-link:hover {
+            color: #fbbf24;
+        }
+
+        .phone-btn {
+            background: #fbbf24;
+            color: #1e293b;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .phone-btn:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+        }
+
+        .phone-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #1e293b;
+            z-index: 200;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .mobile-close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 500;
+            padding: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mobile-cta-btn {
+            background: #fbbf24;
+            color: #1e293b;
+            padding: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Hero Section */
+        .faq-hero {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .faq-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .faq-hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: #fbbf24;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* FAQ Navigation */
+        .faq-nav {
+            position: sticky;
+            top: 100px;
+            background: white;
+            padding: 20px;
+            border-bottom: 2px solid #e5e7eb;
+            z-index: 50;
+        }
+
+        .faq-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .faq-nav-pill {
+            background: #f1f5f9;
+            border: 2px solid transparent;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: #1e293b;
+            font-size: 15px;
+        }
+
+        .faq-nav-pill:hover {
+            background: #e2e8f0;
+        }
+
+        .faq-nav-pill.active {
+            background: #fbbf24;
+            color: #1e293b;
+        }
+
+        /* FAQ Content */
+        .faq-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .faq-category {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .faq-category.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .category-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #1e293b;
+        }
+
+        .faq-item {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #fbbf24;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px 25px;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #1e293b;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f9fafb;
+        }
+
+        .faq-toggle {
+            font-size: 24px;
+            color: #fbbf24;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 25px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 25px 20px;
+        }
+
+        .faq-answer p {
+            color: #475569;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #fbbf24;
+            color: #1e293b;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1e293b;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: #fbbf24;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #fbbf24;
+        }
+
+        .footer-section svg {
+            width: 16px;
+            height: 16px;
+            display: inline;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #94a3b8;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom a {
+            color: #fbbf24;
+            text-decoration: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .faq-hero h1 {
+                font-size: 32px;
+            }
+
+            .faq-hero p {
+                font-size: 16px;
+            }
+
+            .stat-number {
+                font-size: 32px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .category-title {
+                font-size: 24px;
+            }
+
+            .faq-question {
+                font-size: 16px;
+                padding: 15px 20px;
+            }
+
+            .final-cta h2 {
+                font-size: 28px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Top Banner -->
-    <div class="top-banner" style="cursor: pointer;" onclick="window.location.href='booking.html'">
-        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/></svg>
-        Limited Time: Complete Initial Patient Exam + Treatment $0 (Usually $47) | Click to Book Today
+    <div class="urgency-banner" onclick="window.location.href='booking.html'">
+        <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/></svg>
+        Limited Time: Complete Initial Patient Exam + Treatment $0 (Usually $47) - Click to Book
     </div>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681530adca200064432f760e.png" alt="Lakeside Spine & Injury">
-                    </a>
-                </div>
-                <div class="nav-links">
-                    <a href="index.html#about">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="index.html#testimonials">Reviews</a>
-                    <a href="faq.html">FAQ</a>
-                    <a href="recovery-room.html">Blog</a>
-                    <a href="booking.html">Calendar</a>
-                    <a href="tel:303-351-0744" class="nav-cta">
-                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                        (303) 351-0744
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Frequently Asked Questions</h1>
-            <p>Get answers to the most common questions about chiropractic care</p>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="content-section">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center;">Your Questions, Answered</h2>
-            <p class="section-subtitle" style="text-align: center;">We believe in transparency and education. Here are answers to the questions we hear most often.</p>
-
-            <!-- FAQ Navigation Numbers -->
-            <div class="faq-navigation">
-                <button class="faq-nav-btn active" data-faq="1">1</button>
-                <button class="faq-nav-btn" data-faq="2">2</button>
-                <button class="faq-nav-btn" data-faq="3">3</button>
-                <button class="faq-nav-btn" data-faq="4">4</button>
-                <button class="faq-nav-btn" data-faq="5">5</button>
-                <button class="faq-nav-btn" data-faq="6">6</button>
-                <button class="faq-nav-btn" data-faq="7">7</button>
-                <button class="faq-nav-btn" data-faq="8">8</button>
-                <button class="faq-nav-btn" data-faq="9">9</button>
-                <button class="faq-nav-btn" data-faq="10">10</button>
-            </div>
-
-            <!-- FAQ Display Container -->
-            <div class="faq-display">
-                <!-- FAQ 1 -->
-                <div class="faq-card active" data-faq-id="1">
-                    <h3 class="faq-big-question">What is chiropractic care?</h3>
-                    <p class="faq-big-answer">Chiropractic care is a healthcare discipline that focuses on diagnosing and treating musculoskeletal disorders, particularly those affecting the spine. Through manual adjustments and manipulations, chiropractors restore proper alignment, reduce pain, improve mobility, and support your body's natural healing process.</p>
-                </div>
-
-                <!-- FAQ 2 -->
-                <div class="faq-card" data-faq-id="2">
-                    <h3 class="faq-big-question">What conditions can chiropractic care help with?</h3>
-                    <p class="faq-big-answer">Chiropractic care is highly effective for back pain, neck pain, headaches, migraines, sciatica, sports injuries, auto accident injuries, joint pain, and many musculoskeletal conditions. We focus on treating the root cause, not just masking symptoms.</p>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="faq-card" data-faq-id="3">
-                    <h3 class="faq-big-question">Is chiropractic care safe?</h3>
-                    <p class="faq-big-answer">Yes, chiropractic care is extremely safe when performed by a licensed professional like Dr. Andrew Allen. Serious complications are very rare. Most patients experience immediate relief and improved mobility with minimal to no discomfort during treatment.</p>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="faq-card" data-faq-id="4">
-                    <h3 class="faq-big-question">How many sessions will I need to see results?</h3>
-                    <p class="faq-big-answer">Every patient is different. Some experience relief after 1-2 sessions, while others with chronic conditions may need ongoing care. During your initial evaluation, we'll give you a clear, honest timeline based on your specific condition—no guesswork or endless appointments. Our goal is to get you better, not to keep you coming back forever.</p>
-                </div>
-
-                <!-- FAQ 5 -->
-                <div class="faq-card" data-faq-id="5">
-                    <h3 class="faq-big-question">What should I expect during my first visit?</h3>
-                    <p class="faq-big-answer">Your first visit includes a comprehensive 30-minute evaluation where we'll review your health history, discuss your symptoms and goals, perform a physical assessment, and create a personalized treatment plan. If appropriate, we may begin treatment during your first visit. You'll leave with a clear understanding of your condition and the path forward.</p>
-                </div>
-
-                <!-- FAQ 6 -->
-                <div class="faq-card" data-faq-id="6">
-                    <h3 class="faq-big-question">Do you accept insurance?</h3>
-                    <p class="faq-big-answer">We operate outside the insurance system to provide you with transparent pricing and avoid the bureaucratic delays. This allows us to focus 100% on your care, not dealing with insurance companies. We offer affordable cash rates and flexible payment options. Many patients find our direct pricing more affordable than high insurance deductibles and copays.</p>
-                </div>
-
-                <!-- FAQ 7 -->
-                <div class="faq-card" data-faq-id="7">
-                    <h3 class="faq-big-question">How much does treatment cost?</h3>
-                    <p class="faq-big-answer">We believe in transparent pricing with no surprise bills. Your initial evaluation is FREE ($47 value). Follow-up treatment costs are discussed upfront during your first visit, and we offer flexible payment options. Call us at (303) 351-0744 for specific pricing information.</p>
-                </div>
-
-                <!-- FAQ 8 -->
-                <div class="faq-card" data-faq-id="8">
-                    <h3 class="faq-big-question">Can you help with auto accident injuries?</h3>
-                    <p class="faq-big-answer">Absolutely. We specialize in treating auto accident injuries including whiplash, neck pain, back pain, and soft tissue damage. Early treatment is crucial for full recovery. We provide comprehensive care and can document your injuries for insurance claims if needed.</p>
-                </div>
-
-                <!-- FAQ 9 -->
-                <div class="faq-card" data-faq-id="9">
-                    <h3 class="faq-big-question">Do you offer same-day appointments?</h3>
-                    <p class="faq-big-answer">Yes! We understand that pain doesn't wait, so we offer same-day and next-day appointments whenever possible. Call us at (303) 351-0744 or book online to check availability.</p>
-                </div>
-
-                <!-- FAQ 10 -->
-                <div class="faq-card" data-faq-id="10">
-                    <h3 class="faq-big-question">Who can benefit from chiropractic care?</h3>
-                    <p class="faq-big-answer">Almost anyone! Whether you're dealing with chronic pain, recovering from an injury, looking to improve athletic performance, or simply want to feel better and move more freely—chiropractic care can help. We treat patients of all ages and activity levels.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="final-cta">
-        <div class="container">
-            <h2>Still Have Questions?</h2>
-            <p>We're here to help. Book your free evaluation or give us a call—we're happy to answer any questions you have.</p>
-
-            <div class="cta-buttons">
-                <a href="booking.html" class="btn-primary">Book Your Free Evaluation</a>
-                <a href="tel:303-351-0744" class="btn-secondary">
-                    <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                    Call (303) 351-0744
+    <!-- Header -->
+    <header class="lakeside-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681530adca200064432f760e.png" alt="Lakeside Spine & Injury" class="logo-img">
+            </a>
+            <nav class="desktop-nav">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="recovery-room.html" class="nav-link">Blog</a>
+                <a href="booking.html" class="nav-link">Calendar</a>
+                <a href="tel:303-351-0744" class="phone-btn">
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                    (303) 351-0744
                 </a>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo-link">
+                <img src="https://storage.googleapis.com/msgsndr/mfFZvTEAvd47LLAYTUWc/media/681530adca200064432f760e.png" alt="Lakeside Spine & Injury" class="logo-img">
+            </a>
+            <button class="mobile-close-btn" onclick="toggleMobileMenu()">×</button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html#about" class="mobile-nav-link">About</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="index.html#testimonials" class="mobile-nav-link">Reviews</a>
+            <a href="faq.html" class="mobile-nav-link">FAQ</a>
+            <a href="recovery-room.html" class="mobile-nav-link">Blog</a>
+            <a href="booking.html" class="mobile-nav-link">Calendar</a>
+            <a href="tel:303-351-0744" class="mobile-cta-btn">
+                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                Call (303) 351-0744
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="faq-hero">
+        <h1>Frequently Asked Questions</h1>
+        <p>Get clear answers about chiropractic care, costs, and what to expect at Lakeside Spine & Injury.</p>
+
+        <div class="hero-stats">
+            <div class="stat-box">
+                <span class="stat-number">23+</span>
+                <span class="stat-label">Years Experience</span>
             </div>
+            <div class="stat-box">
+                <span class="stat-number">5000+</span>
+                <span class="stat-label">Patients Treated</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Success Rate</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">4.9★</span>
+                <span class="stat-label">Google Rating</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Navigation -->
+    <div class="faq-nav">
+        <div class="faq-nav-container">
+            <button class="faq-nav-pill active" onclick="showCategory('general')">General Care</button>
+            <button class="faq-nav-pill" onclick="showCategory('treatments')">Treatments</button>
+            <button class="faq-nav-pill" onclick="showCategory('conditions')">Conditions</button>
+            <button class="faq-nav-pill" onclick="showCategory('accidents')">Auto Accidents</button>
+            <button class="faq-nav-pill" onclick="showCategory('insurance')">Insurance & Costs</button>
+            <button class="faq-nav-pill" onclick="showCategory('appointments')">Appointments</button>
+        </div>
+    </div>
+
+    <!-- FAQ Content -->
+    <div class="faq-content">
+        <!-- General Care -->
+        <div class="faq-category active" id="general">
+            <h2 class="category-title">General Care</h2>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What is chiropractic care?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Chiropractic care is a healthcare discipline that focuses on diagnosing and treating musculoskeletal disorders, particularly those affecting the spine. Through manual adjustments and manipulations, chiropractors restore proper alignment, reduce pain, improve mobility, and support your body's natural healing process.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is chiropractic care safe?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, chiropractic care is extremely safe when performed by a licensed professional like Dr. Andrew Allen. Serious complications are very rare. Most patients experience immediate relief and improved mobility with minimal to no discomfort during treatment.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What should I expect during my first visit?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Your first visit includes a comprehensive 30-minute evaluation where we'll review your health history, discuss your symptoms and goals, perform a physical assessment, and create a personalized treatment plan. If appropriate, we may begin treatment during your first visit. You'll leave with a clear understanding of your condition and the path forward.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Who can benefit from chiropractic care?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Almost anyone! Whether you're dealing with chronic pain, recovering from an injury, looking to improve athletic performance, or simply want to feel better and move more freely—chiropractic care can help. We treat patients of all ages and activity levels.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Treatments -->
+        <div class="faq-category" id="treatments">
+            <h2 class="category-title">Treatments</h2>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What techniques do you use?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We use a variety of evidence-based techniques including spinal manipulation, soft-tissue therapy, dry needling, cupping therapy, posture analysis, and therapeutic exercises. Treatment is customized based on your specific condition and comfort level.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Will adjustments hurt?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Most patients experience no pain during adjustments. You may hear a "popping" sound, which is simply gas being released from the joint—it's not bones cracking. Some patients feel immediate relief, while others may experience mild soreness similar to post-workout muscle fatigue, which typically resolves within 24 hours.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How many sessions will I need?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Every patient is different. Some experience relief after 1-2 sessions, while others with chronic conditions may need ongoing care. During your initial evaluation, we'll give you a clear, honest timeline based on your specific condition—no guesswork or endless appointments. Our goal is to get you better, not to keep you coming back forever.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What is dry needling?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Dry needling is a technique that uses thin needles to release muscle tension and trigger points. It's highly effective for treating chronic pain, muscle tightness, and sports injuries. Unlike acupuncture, dry needling is based on Western medicine principles and targets specific muscular trigger points.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conditions -->
+        <div class="faq-category" id="conditions">
+            <h2 class="category-title">Conditions We Treat</h2>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What conditions can chiropractic care help with?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We effectively treat back pain, neck pain, headaches, migraines, sciatica, sports injuries, auto accident injuries, joint pain, shoulder pain, carpal tunnel syndrome, posture-related issues, and many other musculoskeletal conditions. We focus on treating the root cause, not just masking symptoms.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can you help with chronic pain?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely. Many of our patients come to us after living with chronic pain for years. Through a combination of spinal adjustments, soft-tissue work, and rehabilitative exercises, we help reduce pain, improve function, and give you tools to manage your condition long-term.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you treat sports injuries?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! We work with athletes of all levels—from weekend warriors to competitive athletes. We specialize in treating sports-related injuries, improving performance, and preventing future injuries through proper biomechanics and strengthening.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can chiropractic care help with headaches?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. Many headaches and migraines are caused by tension, misalignment, or poor posture—especially in patients who work at desks or on computers. Chiropractic adjustments, combined with soft-tissue therapy and posture correction, can significantly reduce headache frequency and intensity.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Auto Accidents -->
+        <div class="faq-category" id="accidents">
+            <h2 class="category-title">Auto Accidents</h2>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can you help with auto accident injuries?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely. We specialize in treating auto accident injuries including whiplash, neck pain, back pain, and soft tissue damage. Early treatment is crucial for full recovery. We provide comprehensive care and can document your injuries for insurance claims if needed.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>When should I seek treatment after an accident?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>As soon as possible. Many auto accident injuries don't show symptoms immediately due to adrenaline and shock. Early evaluation and treatment can prevent chronic pain and long-term complications. We recommend being seen within the first 72 hours after an accident.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Will my auto insurance cover treatment?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Most auto insurance policies include medical payment coverage (MedPay) or personal injury protection (PIP) that covers chiropractic treatment. We can provide documentation and reports for your insurance claim, though you are responsible for payment at the time of service.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What is whiplash and how do you treat it?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Whiplash is a neck injury caused by rapid back-and-forth movement, common in rear-end collisions. Symptoms include neck pain, stiffness, headaches, and dizziness. We treat whiplash with gentle spinal adjustments, soft-tissue therapy, and rehabilitative exercises to restore proper movement and reduce inflammation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Insurance & Costs -->
+        <div class="faq-category" id="insurance">
+            <h2 class="category-title">Insurance & Costs</h2>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you accept insurance?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We operate outside the insurance system to provide you with transparent pricing and avoid bureaucratic delays. This allows us to focus 100% on your care, not dealing with insurance companies. We offer affordable cash rates and flexible payment options. Many patients find our direct pricing more affordable than high insurance deductibles and copays.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How much does treatment cost?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We believe in transparent pricing with no surprise bills. Your initial evaluation is currently FREE (a $47 value). Follow-up treatment costs are discussed upfront during your first visit, and we offer flexible payment options. Call us at (303) 351-0744 for specific pricing information.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I use my HSA or FSA?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! Chiropractic care is a qualified medical expense under most HSA (Health Savings Account) and FSA (Flexible Spending Account) plans. We'll provide detailed receipts you can submit for reimbursement.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you offer payment plans?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. We understand that healthcare costs can add up, so we offer flexible payment options to make care accessible. Discuss your situation with us during your first visit, and we'll work with you to find a solution that fits your budget.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Appointments -->
+        <div class="faq-category" id="appointments">
+            <h2 class="category-title">Appointments</h2>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you offer same-day appointments?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! We understand that pain doesn't wait, so we offer same-day and next-day appointments whenever possible. Call us at (303) 351-0744 or book online to check availability.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How do I book an appointment?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>You can book online through our website, call us at (303) 351-0744, or text us. Online booking is available 24/7 for your convenience.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What are your office hours?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We're open Monday through Friday, 9:00 AM to 6:00 PM. Saturday appointments are available by request. We're closed on Sundays.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What should I bring to my first appointment?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Please bring a photo ID and any relevant medical records or imaging (X-rays, MRIs) if you have them. Wear comfortable clothing that allows for movement. If you have specific questions or concerns, write them down so we can address them during your visit.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What's your cancellation policy?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We understand that life happens. If you need to cancel or reschedule, please give us at least 24 hours notice. This allows us to offer your appointment slot to another patient in need.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Still Have Questions?</h2>
+        <p>We're here to help. Book your free evaluation or give us a call—we're happy to answer any questions you have.</p>
+
+        <div class="cta-buttons">
+            <a href="booking.html" class="btn-primary">Book Your Free Evaluation</a>
+            <a href="tel:303-351-0744" class="btn-secondary">
+                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                Call (303) 351-0744
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Lakeside Spine & Injury</h3>
-                    <p>Personalized chiropractic care in Wheat Ridge, Colorado. No insurance headaches, just real results.</p>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <a href="index.html#about">About Dr. Allen</a>
-                    <a href="services.html">Services</a>
-                    <a href="index.html#testimonials">Testimonials</a>
-                    <a href="faq.html">FAQ</a>
-                    <a href="recovery-room.html">Blog</a>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>
-                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                        (303) 351-0744
-                    </p>
-                    <p>
-                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
-                        drallen@lakesidespineandinjury.com
-                    </p>
-                    <p>
-                        <svg class="icon-small" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
-                        6073 W 44th Ave #101<br>Wheat Ridge, CO 80033
-                    </p>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Office Hours</h3>
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p>Saturday: By Appointment</p>
-                    <p>Sunday: Closed</p>
-                </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Lakeside Spine & Injury</h3>
+                <p>Personalized chiropractic care in Wheat Ridge, Colorado. No insurance headaches, just real results.</p>
             </div>
 
-            <div class="footer-bottom">
-                &copy; 2025 Lakeside Spine & Injury. All rights reserved. | <a href="privacy.html" style="color: #fbbf24;">Privacy Policy</a>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html#about">About Dr. Allen</a>
+                <a href="services.html">Services</a>
+                <a href="index.html#testimonials">Testimonials</a>
+                <a href="faq.html">FAQ</a>
+                <a href="recovery-room.html">Blog</a>
             </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                    (303) 351-0744
+                </p>
+                <p>
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                    drallen@lakesidespineandinjury.com
+                </p>
+                <p>
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                    6073 W 44th Ave #101<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wheat Ridge, CO 80033
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Office Hours</h3>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p>Saturday: By Appointment</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2025 Lakeside Spine & Injury. All rights reserved. | <a href="privacy.html">Privacy Policy</a>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        // FAQ category navigation
+        function showCategory(categoryId) {
+            // Hide all categories
+            document.querySelectorAll('.faq-category').forEach(cat => {
+                cat.classList.remove('active');
+            });
+
+            // Remove active state from all pills
+            document.querySelectorAll('.faq-nav-pill').forEach(pill => {
+                pill.classList.remove('active');
+            });
+
+            // Show selected category
+            document.getElementById(categoryId).classList.add('active');
+
+            // Add active state to clicked pill
+            event.target.classList.add('active');
+
+            // Close any open FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+
+        // FAQ accordion toggle
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const wasActive = faqItem.classList.contains('active');
+
+            // Close all FAQ items in current category
+            faqItem.closest('.faq-category').querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Toggle current item if it wasn't active
+            if (!wasActive) {
+                faqItem.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
