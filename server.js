@@ -18,8 +18,8 @@ app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Start the server
-app.listen(PORT, () => {
+// Start the server - bind to 0.0.0.0 for Railway
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Lakeside Spine & Injury website running on port ${PORT}`);
-  console.log(`Visit: http://localhost:${PORT}`);
+  console.log(`Server is ready to accept connections`);
 });
