@@ -1,0 +1,23 @@
+{
+  "name": "lakeside-spine-injury",
+  "version": "1.0.0",
+  "description": "Lakeside Spine & Injury Center website - Dr. Andrew Allen Chiropractor in Wheat Ridge, CO",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "chiropractic",
+    "spine",
+    "injury",
+    "wheat-ridge"
+  ],
+  "author": "Lakeside Spine & Injury",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
